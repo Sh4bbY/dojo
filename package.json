@@ -1,0 +1,31 @@
+{
+  "name": "katas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "playground": "nodemon",
+    "test": "yarn lint && jest",
+    "lint": "eslint . --ext .ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sh4bbY/katas.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sh4bbY/katas/issues"
+  },
+  "homepage": "https://github.com/Sh4bbY/katas#readme",
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "^4.8.1",
+    "@typescript-eslint/parser": "^4.8.1",
+    "eslint": "^7.14.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.6",
+    "ts-jest": "^26.4.4",
+    "ts-node": "^9.0.0",
+    "typescript": "^4.1.2"
+  }
+}
