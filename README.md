@@ -15,8 +15,8 @@ yarn
 ```
 
 Once this is done you should be able to run the following npm tasks:
-- `yarn test`: runs the test-suite for unit-tests
-- `yarn playground`: run nodemon and watch for changes
+- `yarn test`: runs test-suites for all unit-tests
+- `yarn playground`: run nodemon on file `./src/playground.ts` and watch for changes
 - `yarn lint`: run static code checks
 
 
@@ -33,6 +33,6 @@ It's your job now to start implementing the desired functionality and satisfy th
 
 You can skip parts of the test-suite by prefixing a `describe(...)` function with an 'x' (change it to `xdescribe(...)`).
 
-By default when you checkout the repository, all sections other tha *01-numbers* are skipped.
+To execute only a particular test-suite (eg. basics/01-numbers). Run `yarn test src/basics/01-numbers`
 
 ---

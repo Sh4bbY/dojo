@@ -1,4 +1,4 @@
-const numbers = require(useSolution ? './numbers.solution' : './numbers');
+import * as numbers from './numbers.solution';
 
 describe('numbers', () => {
 
@@ -65,8 +65,8 @@ describe('numbers', () => {
     it('should return false if the first argument is not dividable by the second argument', () => {
       expect(numbers.isDividableBy(10, 3)).toBe(false);
       expect(numbers.isDividableBy(7956, 35)).toBe(false);
-      expect(numbers.isDividableBy(7956, 'wtf')).toBe(false);
-      expect(numbers.isDividableBy(null, 'asd')).toBe(false);
+      expect(numbers.isDividableBy(7956, null)).toBe(false);
+      expect(numbers.isDividableBy(null, 0)).toBe(false);
     });
   });
 
