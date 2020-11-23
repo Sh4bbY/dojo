@@ -2,7 +2,7 @@ import {Surface} from './Surface';
 import {SurfaceItemConfig} from './SurfaceItem';
 
 export abstract class AbstractSurfaceItem {
-  private static idCount: number = 0;
+  private static idCount = 0;
 
   public el: HTMLElement;
   public surface: Surface;

@@ -10,7 +10,7 @@ export class MissionControl {
   public instructionDelay: number;
   public surface: Surface;
   public rover: Rover;
-  private missionEndCallbacks: (() => {})[];
+  private missionEndCallbacks: (() => void)[];
   private protocol: AbstractMissionProtocol;
   private isMissionActive: boolean;
   private ui: MissionControlUI;
@@ -72,7 +72,7 @@ export class MissionControl {
     this.missionEndCallbacks.forEach(f => f());
   }
 
-  public onMissionEnd(f: () => {}) {
+  public onMissionEnd(f: () => void) {
     this.missionEndCallbacks.push(f);
   }
 
