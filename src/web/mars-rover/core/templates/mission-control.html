@@ -1,0 +1,43 @@
+<div>
+  <main class="container">
+    <h1 class="mb-5">Mars Rover - Mission Control</h1>
+
+    <div class="mission-control">
+
+      <div id="surface"></div>
+
+      <aside class="control-panel">
+        <div class="my-2">
+          <select id="mission-select"></select>
+          <button id="load-mission">Load Mission</button>
+          <button id="start-mission">Start Mission</button>
+        </div>
+
+        <div class="my-2">
+          <label for="delay-input">Instruction Delay:</label>
+          <input id="delay-input"/>
+        </div>
+
+        <div class="f-direction-column">
+          <h4>Surface-Items</h4>
+          <textarea id="surface-items"></textarea>
+        </div>
+
+        <div class="f-direction-column">
+          <h4>Rover Log</h4>
+          <textarea id="rover-logs"></textarea>
+        </div>
+
+        <div class="f-direction-column">
+          <h4>Rover Bag</h4>
+          <textarea id="rover-bag"></textarea>
+        </div>
+
+        <div>
+          <h4>Performed Actions: <span id="action-count"></span></h4>
+        </div>
+      </aside>
+
+    </div>
+  </main>
+</div>

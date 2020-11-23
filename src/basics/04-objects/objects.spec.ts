@@ -1,4 +1,4 @@
-const objects = require(useSolution ? './objects.solution' : './objects');
+import * as objects from './objects.solution';
 
 describe('objects', () => {
 

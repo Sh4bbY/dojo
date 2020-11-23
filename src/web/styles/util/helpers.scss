@@ -1,0 +1,50 @@
+@use "sass:list";
+
+.f-direction-column {
+  flex-direction: column;
+}
+.text-center {
+  text-align: center;
+}
+
+$types: "m", "p";
+$directions: "a", "l", "r", "t", "b", "x", "y";
+$distances: 0px, 2px, 4px, 8px, 16px, 32px;
+
+@each $type in $types {
+  @each $dir in $directions {
+    $selector: "#{$type}#{$dir}";
+
+    @for $i from 0 through 5 {
+      $distance: list.nth($distances, $i + 1);
+
+      .#{$selector}-#{$i} {
+        @if ($selector == "ml" or $selector == "mx" or $selector == "ma") {
+          margin-left: $distance;
+        }
+        @if ($selector == "mr" or $selector == "mx" or $selector == "ma") {
+          margin-right: $distance;
+        }
+        @if ($selector == "mt" or $selector == "my" or $selector == "ma") {
+          margin-top: $distance;
+        }
+        @if ($selector == "mb" or $selector == "my" or $selector == "ma") {
+          margin-bottom: $distance;
+        }
+
+        @if ($selector == "pl" or $selector == "px" or $selector == "pa") {
+          padding-left: $distance;
+        }
+        @if ($selector == "pr" or $selector == "px" or $selector == "pa") {
+          padding-right: $distance;
+        }
+        @if ($selector == "pt" or $selector == "py" or $selector == "pa") {
+          padding-top: $distance;
+        }
+        @if ($selector == "pb" or $selector == "py" or $selector == "pa") {
+          padding-bottom: $distance;
+        }
+      }
+    }
+  }
+}

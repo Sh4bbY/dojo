@@ -1,14 +1,14 @@
-Katas
-=====
+Coding Dojo
+===========
 
 ## Getting Started
 
 ```bash
 # clone the repository
-git clone git@github.com:Sh4bbY/katas.git
+git clone git@github.com:Sh4bbY/dojo.git
 
 # navigate into the repository
-cd katas
+cd dojo
 
 # install dependencies
 yarn

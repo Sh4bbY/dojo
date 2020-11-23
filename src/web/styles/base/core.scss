@@ -1,0 +1,10 @@
+@import "../util/variables";
+
+body {
+  background-color: $c-background;
+  font-family: Roboto, sans-serif;
+}
+
+h1, h2, h3, h4 {
+  margin-bottom: 2px;
+}
