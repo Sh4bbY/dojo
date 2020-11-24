@@ -16,7 +16,7 @@ yarn
 
 Once this is done you should be able to run the following npm tasks:
 - `yarn test`: runs test-suites for all unit-tests
-- `yarn playground`: run nodemon on file `./src/playground.ts` and watch for changes
+- `yarn play`: run nodemon on file `./src/playground.ts` and watch for changes
 - `yarn lint`: run static code checks
 - `yarn web`: run webpack-dev-server and bring up mars-rover mission-control
 

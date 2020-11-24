@@ -4,7 +4,7 @@
   "description": "coding dojo upcoming js/ts developers",
   "main": "index.js",
   "scripts": {
-    "playground": "nodemon",
+    "play": "nodemon",
     "test": "yarn lint && jest",
     "lint": "eslint . --ext .ts",
     "web": "webpack serve"
