@@ -2,9 +2,6 @@ import {CalculatorInterface} from './Calculator.interface';
 
 export class Calculator implements CalculatorInterface {
 
-  constructor() {
-  }
-
   press(value: string) {
     throw new Error('Not yet implemented');
   }

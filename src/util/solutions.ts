@@ -25,8 +25,9 @@ function copySolutionFiles(paths: string[]) {
   });
 
   if (writtenFiles.length > 0) {
-    console.log('Written files:');
-    writtenFiles.forEach(file => console.log(' - ' + file));
+    console.log('Created Files:');
+    writtenFiles.map(file => '.' + file.substring(process.cwd().length))
+      .forEach(file => console.log(' - ' + file));
   }
 }
 

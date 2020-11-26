@@ -116,7 +116,7 @@ describe('Async', () => {
 
   describe('requestApi', () => {
     it('should request a endpoint and give back result as Json', async () => {
-      const result = await Async.requestApi('GET', 'https://jsonplaceholder.typicode.com/posts/42');
+      const result = await Async.requestApi('https://jsonplaceholder.typicode.com/posts/42');
       expect(result).toHaveProperty('userId', 5);
       expect(result).toHaveProperty('id', 42);
       expect(result).toHaveProperty('title', 'commodi ullam sint et excepturi error explicabo praesentium voluptas');

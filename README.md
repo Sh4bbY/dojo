@@ -14,7 +14,7 @@ cd dojo
 yarn
 
 # create *.solution.ts files from *.template.ts files
-yarn create-solutions
+yarn solutions
 ```
 
 Once this is done you should be able to run the following npm tasks:
@@ -22,7 +22,7 @@ Once this is done you should be able to run the following npm tasks:
 - `yarn play`: run nodemon on file `./src/playground.ts` and watch for changes
 - `yarn lint`: run static code checks
 - `yarn web`: run webpack-dev-server and bring up mars-rover mission-control
-- `yarn create-solutions`: create `*.solution.ts` files from `*.template.ts` if solution file does not exist
+- `yarn solutions`: create `*.solution.ts` files from `*.template.ts` if solution file does not exist
 
 ### Order Recommendation
 
