@@ -28,9 +28,9 @@ To change this behavior set the `globals.useSolution` property in `jest.config.t
 
 ### Order Recommendation
 
-Before you dig into mars-rover missions, you first should complete a decent amount of basic and object-orientation challenges.
+Before you dig into mars-rover missions, you first should complete a decent amount of basic and advanced challenges.
 
-So start with the basics before you head over to object-orientation or web.
+So start with the basics before you head over to advanced or web.
 
 ### Start Implementing
 

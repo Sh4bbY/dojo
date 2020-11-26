@@ -21,5 +21,5 @@ export class Calculator implements CalculatorInterface {
 To run only this particular test-suite, execute:
 
 ```bash
-yarn test src/object-orientation/03-calculator
+yarn test src/advanced/03-calculator
 ```

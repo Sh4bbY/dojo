@@ -20,5 +20,5 @@ export class SodaMachine extends AbstractSodaMachine {
 
 to run the test-suite only for that particular kata, you can execute
 ```bash
-yarn test src/object-orientation/01-soda-machine
+yarn jest src/advanced/soda-machine
 ```

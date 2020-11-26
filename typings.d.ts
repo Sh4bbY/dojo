@@ -3,4 +3,4 @@ declare module '*.html' {
   export default value;
 }
 
-declare var useSolution: boolean;
+declare const useSolution: boolean;

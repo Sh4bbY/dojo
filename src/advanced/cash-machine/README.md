@@ -22,5 +22,5 @@ export class CashMachine extends AbstractCashMachine {
 To run only this particular test-suite, execute:
 
 ```bash
-yarn test src/object-orientation/02-cash-machine
+yarn test src/advanced/02-cash-machine
 ```

@@ -8,6 +8,6 @@ If you completed this kata you should know the difference between **copy-by-valu
 To start this kata, you should navigate into this directory and make a solution copy of `LinkedList.ts`
 
 ```bash
-cp src/object-orientation/04-linked-list/LinkedList.ts src/object-orientation/04-linked-list/LinkedList.solution.ts
-yarn jest src/object-orientation/04-linked-list
+cp src/advanced/04-linked-list/LinkedList.ts src/advanced/04-linked-list/LinkedList.solution.ts
+yarn jest src/advanced/04-linked-list
 ```
