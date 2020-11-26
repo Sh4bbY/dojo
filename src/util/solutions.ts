@@ -10,6 +10,8 @@ function getTemplateFiles(dirPath: string): string[] {
 }
 
 function copySolutionFiles(paths: string[]) {
+  const writtenFiles = [];
+
   paths.forEach(templatePath => {
     const dir = templatePath.substring(0, templatePath.lastIndexOf('/'));
     const templateName = templatePath.substring(templatePath.lastIndexOf('/'));
@@ -18,8 +20,14 @@ function copySolutionFiles(paths: string[]) {
 
     if (!fs.existsSync(solutionPath)) {
       fs.copyFileSync(templatePath, solutionPath);
+      writtenFiles.push(solutionPath);
     }
   });
+
+  if (writtenFiles.length > 0) {
+    console.log('Written files:');
+    writtenFiles.forEach(file => console.log(' - ' + file));
+  }
 }
 
 const root = path.join(process.cwd(), 'src');
