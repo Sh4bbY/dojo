@@ -15,13 +15,18 @@ yarn
 ```
 
 Once this is done you should be able to run the following npm tasks:
-- `yarn test`: runs test-suites for all unit-tests
+- `yarn test`: run linter and test-suites for all unit-tests
 - `yarn play`: run nodemon on file `./src/playground.ts` and watch for changes
 - `yarn lint`: run static code checks
 - `yarn web`: run webpack-dev-server and bring up mars-rover mission-control
 
+### Test your Solutions
 
-### Recommended Order
+By default the test-suites will use `*.template.ts` files to test.
+To change this behavior set the `globals.useSolution` property in `jest.config.ts` to `true`.
+
+
+### Order Recommendation
 
 Before you dig into mars-rover missions, you first should complete a decent amount of basic and object-orientation challenges.
 

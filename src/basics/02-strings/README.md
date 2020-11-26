@@ -3,14 +3,14 @@ Strings Kata
 
 Here you learn how to work with strings in javascript/typescript.
 
-To get started make a copy of `strings.boilerplate.ts` and save it as `strings.solution.ts`
+To get started make a copy of `Strings.template.ts` and save it as `Strings.solution.ts`
 
 ```bash
 cd src/basics/02-strings
-cp strings.boilerplate.ts strings.solution.ts
+cp Strings.template.ts Strings.solution.ts
 ```
 
-to run the test-suite only for that particular kata, you can execute
+to run only unit tests for that particular kata, you can execute
 ```bash
-yarn test src/basics/02-strings
+yarn jest src/basics/02-strings
 ```
