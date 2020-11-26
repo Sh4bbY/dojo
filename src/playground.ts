@@ -1,3 +1,3 @@
 import {Numbers} from './basic/numbers/Numbers.solution';
 
-console.log(Numbers.sumOfTwo(10, 20));
+console.log(Numbers.sumOfTwo(1, 23));
