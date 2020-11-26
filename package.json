@@ -7,7 +7,8 @@
     "play": "nodemon",
     "test": "yarn lint && jest",
     "lint": "eslint . --ext .ts",
-    "web": "webpack serve"
+    "web": "webpack serve",
+    "solutions": "ts-node ./src/util/solutions.ts"
   },
   "repository": {
     "type": "git",

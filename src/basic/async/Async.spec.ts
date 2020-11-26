@@ -1,6 +1,4 @@
-import {AsyncInterface} from './Async.interface';
-
-const Async: AsyncInterface = require(useSolution ? './Async.solution' : './Async.template').Async;
+import {Async} from './Async.solution';
 
 describe('Async', () => {
 

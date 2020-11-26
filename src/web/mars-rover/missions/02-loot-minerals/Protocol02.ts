@@ -1,6 +1,6 @@
 import {AbstractMissionProtocol} from '../../core/AbstractMissionProtocol';
 import {SurfaceItemType} from '../../core/SurfaceItemType';
-import {Rover02} from './Rover02';
+import {Rover02} from './Rover02.tempate';
 
 export class Protocol02 extends AbstractMissionProtocol {
   public rover: Rover02;

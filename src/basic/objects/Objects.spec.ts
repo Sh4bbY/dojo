@@ -1,6 +1,4 @@
-import {ObjectsInterface} from './Objects.interface';
-
-const Objects: ObjectsInterface = require(useSolution ? './Objects.solution' : './Objects.template').Objects;
+import {Objects} from './Objects.solution';
 
 describe('Objects', () => {
 

@@ -1,6 +1,4 @@
-import {StringsInterface} from './Strings.interface';
-
-const Strings: StringsInterface = require(useSolution ? './Strings.solution' : './Strings.template').Strings;
+import {Strings} from './Strings.solution';
 
 describe('Strings', () => {
 

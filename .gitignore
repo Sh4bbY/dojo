@@ -1,4 +1,6 @@
 .dist/
 .idea/
+.env
+yarn-error.log
 node_modules/
 src/**/*.solution.ts

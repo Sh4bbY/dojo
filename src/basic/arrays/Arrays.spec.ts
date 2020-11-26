@@ -1,6 +1,4 @@
-import {ArraysInterface} from './Arrays.interface';
-
-const Arrays: ArraysInterface = require(useSolution ? './Arrays.solution' : './Arrays.template').Arrays;
+import {Arrays} from './Arrays.solution';
 
 describe('Arrays', () => {
 

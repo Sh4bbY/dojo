@@ -1,13 +1,11 @@
 import {AbstractMissionProtocol} from '../../core/AbstractMissionProtocol';
-import {Rover01} from './Rover01';
+import {Rover01} from './Rover01.template';
 
 export class Protocol01 extends AbstractMissionProtocol {
   public rover: Rover01;
 
   public async start(...args: any[]) {
-    // Write your code here
-
-    // TODO: Remove Code Example
+    // TODO: Remove Code Example and write your code here
     for (let i = 0; i < 4; i++) {
       await this.rover.turnRight();
       await this.rover.moveForward();

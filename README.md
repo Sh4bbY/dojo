@@ -12,6 +12,9 @@ cd dojo
 
 # install dependencies
 yarn
+
+# create *.solution.ts files from *.template.ts files
+yarn create-solutions
 ```
 
 Once this is done you should be able to run the following npm tasks:
@@ -19,12 +22,7 @@ Once this is done you should be able to run the following npm tasks:
 - `yarn play`: run nodemon on file `./src/playground.ts` and watch for changes
 - `yarn lint`: run static code checks
 - `yarn web`: run webpack-dev-server and bring up mars-rover mission-control
-
-### Test your Solutions
-
-By default the test-suites will use `*.template.ts` files to test.
-To change this behavior set the `globals.useSolution` property in `jest.config.ts` to `true`.
-
+- `yarn create-solutions`: create `*.solution.ts` files from `*.template.ts` if solution file does not exist
 
 ### Order Recommendation
 
@@ -45,6 +43,6 @@ It's your job now to start implementing the desired functionality and satisfy th
 
 You can skip parts of the test-suite by prefixing a `describe(...)` function with an 'x' (change it to `xdescribe(...)`).
 
-To execute only a particular test-suite (eg. basics/01-numbers). Run `yarn test src/basics/01-numbers`
+To execute only a particular test-suite (eg. basic/numbers). Run `yarn jest src/basic/numbers`
 
 ---

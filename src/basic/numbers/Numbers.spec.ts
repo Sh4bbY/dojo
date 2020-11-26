@@ -1,6 +1,4 @@
-import {NumbersInterface} from './Numbers.interface';
-
-const Numbers: NumbersInterface = require(useSolution ? './Numbers.solution' : './Numbers.template').Numbers;
+import {Numbers} from './Numbers.solution';
 
 describe('Numbers', () => {
 

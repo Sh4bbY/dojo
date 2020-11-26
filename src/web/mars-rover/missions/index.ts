@@ -1,6 +1,7 @@
 import {Mars01} from './01-move-around/Mars01';
-import {Protocol01} from './01-move-around/Protocol01';
-import {Rover01} from './01-move-around/Rover01';
+import {Protocol01} from './01-move-around/Protocol01.solution';
+import {Rover01} from './01-move-around/Rover01.solution';
+
 import {Mars02} from './02-loot-minerals/Mars02';
 import {Protocol02} from './02-loot-minerals/Protocol02';
 import {Rover02} from './02-loot-minerals/Rover02.solution';
