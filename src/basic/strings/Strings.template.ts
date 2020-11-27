@@ -39,4 +39,17 @@ export class Strings {
     throw new Error('Not yet implemented');
   }
 
+  /**
+   * returns a object with all characters of the given string as keys with the count of occurrences as value.
+   */
+  public static countCharacters(str: string): { [char: string]: number } {
+    throw new Error('Not yet implemented');
+  }
+
+  /**
+   * returns a object with all characters of the given string as keys with the count of occurrences as value.
+   */
+  public static isPalindrome(str: string): boolean {
+    throw new Error('Not yet implemented');
+  }
 }

@@ -9,5 +9,7 @@ export interface StringsInterface {
 
   replaceOccurrence(str: string, replace: { [key: string]: string }): string;
 
-  // isPalindrome(str: string): boolean;
+  countCharacters(str: string): { [char: string]: number };
+
+  isPalindrome(str: string): boolean;
 }
