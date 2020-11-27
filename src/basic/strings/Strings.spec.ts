@@ -87,4 +87,12 @@ describe('Strings', () => {
       expect(Strings.isPalindrome('6789987654321')).toBe(false);
     });
   });
+
+  describe('findRepeatedDnaSequences', () => {
+    it('should return all dna sequences that are 10 chars long and repeated at least twice', () => {
+      expect(Strings.findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT')).toStrictEqual(['AAAAACCCCC', 'CCCCCAAAAA']);
+      expect(Strings.findRepeatedDnaSequences('AAAAAAAAAAAAA')).toStrictEqual(['AAAAAAAAAA']);
+      // expect(Strings.isPalindrome('AAAACCCAAAGGGGAATTTAAAAAAAACCCAAAGAAA')).toStrictEqual(['AAAACCCAAAG']);
+    });
+  });
 });

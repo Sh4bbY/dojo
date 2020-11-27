@@ -12,4 +12,6 @@ export interface StringsInterface {
   countCharacters(str: string): { [char: string]: number };
 
   isPalindrome(str: string): boolean;
+
+  findRepeatedDnaSequences(str: string): string[];
 }
