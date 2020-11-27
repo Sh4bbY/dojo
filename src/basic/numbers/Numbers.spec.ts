@@ -2,13 +2,13 @@ import {Numbers} from './Numbers.solution';
 
 describe('Numbers', () => {
 
-  describe('sumOfTwo', () => {
+  xdescribe('sumOfTwo', () => {
     it('should add 2 numbers', () => {
       expect(Numbers.sumOfTwo(1, 2)).toBe(3);
     });
   });
 
-  describe('sumOfMany', () => {
+  xdescribe('sumOfMany', () => {
     it('should add n numbers', () => {
       expect(Numbers.sumOfMany(1)).toBe(1);
       expect(Numbers.sumOfMany(1, 2)).toBe(3);
@@ -17,7 +17,7 @@ describe('Numbers', () => {
     });
   });
 
-  describe('isNumber', () => {
+  xdescribe('isNumber', () => {
     it('should return true if value is a number', () => {
       expect(Numbers.isNumber(0)).toBe(true);
       expect(Numbers.isNumber(123)).toBe(true);
@@ -34,7 +34,7 @@ describe('Numbers', () => {
     });
   });
 
-  describe('isNumeric', () => {
+  xdescribe('isNumeric', () => {
     it('should return true if value is numeric', () => {
       expect(Numbers.isNumeric(0)).toBe(true);
       expect(Numbers.isNumeric(123)).toBe(true);
@@ -52,7 +52,7 @@ describe('Numbers', () => {
     });
   });
 
-  describe('isDividableBy', () => {
+  xdescribe('isDividableBy', () => {
     it('should return true if the first argument is dividable by the second argument', () => {
       expect(Numbers.isDividableBy(10, 5)).toBe(true);
       expect(Numbers.isDividableBy(7956, 34)).toBe(true);
@@ -70,7 +70,7 @@ describe('Numbers', () => {
     });
   });
 
-  describe('isOddNumber', () => {
+  xdescribe('isOddNumber', () => {
     it('should return true if the first argument is a odd number', () => {
       expect(Numbers.isOddNumber(11)).toBe(true);
       expect(Numbers.isOddNumber(12345)).toBe(true);
@@ -82,7 +82,7 @@ describe('Numbers', () => {
     });
   });
 
-  describe('faculty', () => {
+  xdescribe('faculty', () => {
     it('should return the faculty of a given number', () => {
       expect(Numbers.faculty(5)).toBe(120);
       expect(Numbers.faculty(10)).toBe(3628800);
