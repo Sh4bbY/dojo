@@ -98,5 +98,28 @@ describe('Numbers', () => {
     });
   });
 
+  describe('readBinaryString', () => {
+    it('should read a binary string and return the decimal number', () => {
+      expect(Numbers.readBinaryString('')).toBe(0);
+      expect(Numbers.readBinaryString('1')).toBe(1);
+      expect(Numbers.readBinaryString('0000')).toBe(0);
+      expect(Numbers.readBinaryString('0111')).toBe(7);
+      expect(Numbers.readBinaryString('01111011')).toBe(123);
+      expect(Numbers.readBinaryString('1000101011')).toBe(555);
+      expect(Numbers.readBinaryString('11000000111001')).toBe(12345);
+    });
+  });
+
+  describe('getBinaryString', () => {
+    it('should return the binary representation of a given decimal number', () => {
+      expect(Numbers.getBinaryString(1)).toBe('1');
+      expect(Numbers.getBinaryString(0)).toBe('0');
+      expect(Numbers.getBinaryString(7)).toBe('111');
+      expect(Numbers.getBinaryString(123)).toBe('1111011');
+      expect(Numbers.getBinaryString(555)).toBe('1000101011');
+      expect(Numbers.getBinaryString(12345)).toBe('11000000111001');
+    });
+  });
+
 });
 

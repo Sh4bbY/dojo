@@ -59,4 +59,19 @@ export class Numbers {
   public static fibonacci(n: number): number[] {
     throw new Error('Not yet implemented');
   }
+
+  /**
+   * should read a given binary string and return the respective decimal number
+   */
+  public static readBinaryString(binary: string): number {
+    throw new Error('Not yet implemented');
+  }
+
+
+  /**
+   * should return the binary representation of a given decimal number
+   */
+  public static getBinaryString(num: number): string {
+    throw new Error('Not yet implemented');
+  }
 }

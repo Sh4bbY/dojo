@@ -14,4 +14,8 @@ export interface NumbersInterface {
   faculty(num: number): number;
 
   fibonacci(n: number): number[];
+
+  readBinaryString(binary: string): number;
+
+  getBinaryString(num: number): string;
 }
