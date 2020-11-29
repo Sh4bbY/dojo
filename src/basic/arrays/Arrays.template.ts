@@ -75,16 +75,24 @@ export class Arrays {
   }
 
   /**
-   * TODO: ...
+   * should apply a function to every array-item and return the transformed array
    */
   public static map<T>(array: T[], fn: (item: T) => T): T[] {
     throw new Error('Not yet implemented');
   }
 
   /**
-   * TODO: ...
+   * should reduce a array to a single value by the help of a function and one initial value
    */
   public static reduce<T, R>(array: T[], fn: (accu: R, item: T, index?: number) => R, initial: R): R {
     throw new Error('Not yet implemented');
   }
+
+  /**
+   * should find the median of the combination of 2 sorted arrays.
+   * @difficulty: medium-hard
+   */
+  public static findMedianSortedArrays(nums1: number[], nums2: number[]): number {
+    throw new Error('Not yet implemented');
+  };
 }

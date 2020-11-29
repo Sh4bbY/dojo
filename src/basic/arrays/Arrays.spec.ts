@@ -111,5 +111,16 @@ describe('Arrays', () => {
     });
   });
 
+  describe('findMedianSortedArrays', () => {
+    it('should find the median of the combination of 2 sorted arrays', () => {
+      expect(Arrays.findMedianSortedArrays([1, 2], [3, 4])).toBe(2.5);
+      expect(Arrays.findMedianSortedArrays([1, 2], [3])).toBe(2);
+      expect(Arrays.findMedianSortedArrays([1], [2, 3])).toBe(2);
+      expect(Arrays.findMedianSortedArrays([], [1, 2, 3])).toBe(2);
+      expect(Arrays.findMedianSortedArrays([1, 2, 3], [])).toBe(2);
+      expect(Arrays.findMedianSortedArrays([0,0], [0,0])).toBe(0);
+    });
+  });
+
 });
 
