@@ -1,6 +1,5 @@
-import {StaticInterface} from '../../util/static.decorator';
-import {ObjectsInterface} from './Objects.interface';
-
+import { StaticInterface } from "../../util/static.decorator";
+import { ObjectsInterface } from "./Objects.interface";
 
 @StaticInterface<ObjectsInterface>()
 export class Objects {
@@ -9,7 +8,7 @@ export class Objects {
    * it should return false, if the value is an Array, Date, null, string, or number.
    */
   public static isPlainObject(value: any): boolean {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 
   /**
@@ -31,21 +30,20 @@ export class Objects {
    * a and b should not be changed!
    */
   public static merge(a: any, b: any): any {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 
   /**
    * return true when 2 simple objects a and b are equal
    */
   public static equals(a: any, b: any): boolean {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 
   /**
    * return true when 2 nested objects a and b are deeply equal
    */
   public static deepEquals(a: any, b: any): boolean {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
-
 }

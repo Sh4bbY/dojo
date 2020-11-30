@@ -35,13 +35,12 @@ export class Arrays {
    * returns a new array where all even numbers are be multiplied by 2
    */
   public static duplicateEven(values: number[]): number[] {
-    const input = values;
-    for (let i = 0; i < input.length; i++) {
-      if (input[i] % 2 === 0) {
-        input[i] *= 2;
+    for (let i = 0; i < values.length; i++) {
+      if (values[i] % 2 === 0) {
+        values[i] *= 2;
       }
     }
-    return input;
+    return values;
   }
 
   /**
@@ -87,14 +86,10 @@ export class Arrays {
     let counter = 0;
     for (let i = 1; i <= a.length; i++) {
       if (a[i] === b[i]) {
-        counter = counter + 1;
+        counter += 1;
       }
     }
-    if (counter === a.length) {
-      return true;
-    } else {
-      return false;
-    }
+    return counter === a.length;
   }
 
   /**
@@ -126,11 +121,8 @@ export class Arrays {
       });
       return inputArray;
     }
-    let outputArrayA = sortArray(a);
-    let outputArrayB = sortArray(b);
-
     return (
-      outputArrayA.join().toLowerCase() === outputArrayB.join().toLowerCase()
+      sortArray(a).join().toLowerCase() === sortArray(b).join().toLowerCase()
     );
   }
 
@@ -138,8 +130,7 @@ export class Arrays {
    * TODO: ...
    */
   public static map<T>(array: T[], fn: (item: T) => T): T[] {
-    const output = array.map(fn);
-    return output;
+    return array.map(fn);
   }
 
   /**
@@ -169,13 +160,10 @@ export class Arrays {
         return array;
       } else return array;
     }
-
-    let nums1Processed = emptyArrayToZero(nums1);
-    let nums2Processed = emptyArrayToZero(nums2);
     const reducer = (prev, curr) => prev + curr;
-
     return (
-      (nums1Processed.reduce(reducer) + nums2Processed.reduce(reducer)) /
+      (emptyArrayToZero(nums1).reduce(reducer) +
+        emptyArrayToZero(nums2).reduce(reducer)) /
       (nums1.length + nums2.length)
     );
   }

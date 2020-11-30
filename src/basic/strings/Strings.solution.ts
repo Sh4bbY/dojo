@@ -23,12 +23,10 @@ export class Strings {
   public static reverseCase(str: string): string {
     let output = "";
     for (let i = 0; i < str.length; i++) {
-      const char = str[i];
-      if (char === char.toLowerCase()) {
-        //warum nicht output =+ char.toUpperCase();
-        output += char.toUpperCase();
+      if (str[i] === str[i].toLowerCase()) {
+        output += str[i].toUpperCase();
       } else {
-        output += char.toLowerCase();
+        output += str[i].toLowerCase();
       }
     }
     return output;
@@ -38,14 +36,13 @@ export class Strings {
    * returns the amount of occurrences of a given word within a string
    */
   public static countOccurrence(str: string, word: string): number {
-    const i = [];
+    const output = [];
     let indexOfWord = str.indexOf(word);
-
     while (indexOfWord != -1) {
-      i.push(indexOfWord);
+      output.push(indexOfWord);
       indexOfWord = str.indexOf(word, indexOfWord + 1);
     }
-    return i.length;
+    return output.length;
   }
 
   /**
