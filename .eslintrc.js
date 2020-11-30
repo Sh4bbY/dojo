@@ -14,5 +14,6 @@ module.exports = {
     '@typescript-eslint/no-unused-vars': severity.off,
     '@typescript-eslint/no-explicit-any': severity.off,
     '@typescript-eslint/explicit-module-boundary-types': severity.off,
+    'eqeqeq': severity.warn,
   },
 };
