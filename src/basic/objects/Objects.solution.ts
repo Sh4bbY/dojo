@@ -16,14 +16,14 @@ export class Objects {
    * returns all keys of a given object as array of strings
    */
   public static getKeys(obj: any): string[] {
-    throw new Error('Not yet implemented');
+    return Object.keys(obj);
   }
 
   /**
    * returns all values of a given object as array
    */
   public static getValues(obj: any): any[] {
-    throw new Error('Not yet implemented');
+    return Object.values(obj);
   }
 
   /**

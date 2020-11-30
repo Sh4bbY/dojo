@@ -8,7 +8,6 @@ export class Strings {
    */
   public static upperCase(str: string): string {
     return str.toUpperCase();
-    throw new Error("Not yet implemented");
   }
 
   /**
@@ -16,18 +15,16 @@ export class Strings {
    */
   public static lowerCase(str: string): string {
     return str.toLowerCase();
-    throw new Error("Not yet implemented");
   }
 
   /**
    * returns a representation of the given string where upperCase and lowerCase got switched
    */
   public static reverseCase(str: string): string {
-    const input = str;
     let output = "";
-    for (let i = 0; i < input.length; i++) {
-      const char = input[i];
-      if (char == char.toLowerCase()) {
+    for (let i = 0; i < str.length; i++) {
+      const char = str[i];
+      if (char === char.toLowerCase()) {
         //warum nicht output =+ char.toUpperCase();
         output += char.toUpperCase();
       } else {
@@ -35,7 +32,6 @@ export class Strings {
       }
     }
     return output;
-    throw new Error("Not yet implemented");
   }
 
   /**
@@ -43,16 +39,13 @@ export class Strings {
    */
   public static countOccurrence(str: string, word: string): number {
     const i = [];
-    const array = str;
-    const element = word;
-    let indexOfElement = array.indexOf(element);
+    let indexOfWord = str.indexOf(word);
 
-    while (indexOfElement != -1) {
-      i.push(indexOfElement);
-      indexOfElement = array.indexOf(element, indexOfElement + 1);
+    while (indexOfWord != -1) {
+      i.push(indexOfWord);
+      indexOfWord = str.indexOf(word, indexOfWord + 1);
     }
     return i.length;
-    throw new Error("Not yet implemented");
   }
 
   /**

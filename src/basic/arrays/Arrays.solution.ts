@@ -8,7 +8,6 @@ export class Arrays {
    */
   public static isArray(value: any): boolean {
     return Array.isArray(value);
-    throw new Error("Not yet implemented");
   }
 
   /**
@@ -16,15 +15,13 @@ export class Arrays {
    */
   public static merge(a: any[], b: any[]): any[] {
     return a.concat(b);
-    throw new Error("Not yet implemented");
   }
 
   /**
    * returns a new array where all odd numbers are removed
    */
   public static removeOddNumbers(values: number[]): number[] {
-    return values.filter((e) => e % 2 == 0);
-    throw new Error("Not yet implemented");
+    return values.filter((e) => e % 2 === 0);
   }
 
   /**
@@ -32,7 +29,6 @@ export class Arrays {
    */
   public static duplicate(values: number[]): number[] {
     return values.map((e) => e * 2);
-    throw new Error("Not yet implemented");
   }
 
   /**
@@ -46,7 +42,6 @@ export class Arrays {
       }
     }
     return input;
-    throw new Error("Not yet implemented");
   }
 
   /**
@@ -56,7 +51,6 @@ export class Arrays {
     return values.sort(function (a, b) {
       return a - b;
     });
-    throw new Error("Not yet implemented");
   }
 
   /**
@@ -72,12 +66,11 @@ export class Arrays {
         return 0;
       }
     });
-    if (ascendingOrder == true) {
+    if (ascendingOrder === true) {
       return output;
     } else {
       return output.reverse();
     }
-    throw new Error("Not yet implemented");
   }
 
   /**
@@ -93,23 +86,21 @@ export class Arrays {
   public static equals(a: any[], b: any[]): boolean {
     let counter = 0;
     for (let i = 1; i <= a.length; i++) {
-      if (a[i] == b[i]) {
+      if (a[i] === b[i]) {
         counter = counter + 1;
       }
     }
-    if (counter == a.length) {
+    if (counter === a.length) {
       return true;
     } else {
       return false;
     }
-    throw new Error("Not yet implemented");
   }
 
   /**
    * returns true when a and b contains the same items, even tough the order is not the same.
    */
   public static similar(a: any[], b: any[]): boolean {
-
     function sortArray(inputArray) {
       if (typeof a[0] != "number") {
         inputArray.sort(function (a, b) {
@@ -139,19 +130,16 @@ export class Arrays {
     let outputArrayB = sortArray(b);
 
     return (
-      outputArrayA.join().toLowerCase() == outputArrayB.join().toLowerCase()
+      outputArrayA.join().toLowerCase() === outputArrayB.join().toLowerCase()
     );
-
-    throw new Error("Not yet implemented");
   }
 
   /**
    * TODO: ...
    */
   public static map<T>(array: T[], fn: (item: T) => T): T[] {
-    
-    
-    throw new Error("Not yet implemented");
+    const output = array.map(fn);
+    return output;
   }
 
   /**
@@ -162,6 +150,8 @@ export class Arrays {
     fn: (accu: R, item: T, index?: number) => R,
     initial: R
   ): R {
+    // const output = array.reduce(fn());
+    //   return output;
     throw new Error("Not yet implemented");
   }
 
@@ -173,6 +163,20 @@ export class Arrays {
     nums1: number[],
     nums2: number[]
   ): number {
-    throw new Error("Not yet implemented");
+    function emptyArrayToZero(array) {
+      if (Array.isArray(array) && !(array.length > 0)) {
+        array = [0];
+        return array;
+      } else return array;
+    }
+
+    let nums1Processed = emptyArrayToZero(nums1);
+    let nums2Processed = emptyArrayToZero(nums2);
+    const reducer = (prev, curr) => prev + curr;
+
+    return (
+      (nums1Processed.reduce(reducer) + nums2Processed.reduce(reducer)) /
+      (nums1.length + nums2.length)
+    );
   }
 }

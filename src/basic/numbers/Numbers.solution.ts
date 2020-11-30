@@ -9,7 +9,6 @@ export class Numbers {
    */
   public static sumOfTwo(a: number, b: number): number {
     return a + b;
-    throw new Error('Not yet implemented');
   }
 
   /**
@@ -17,24 +16,17 @@ export class Numbers {
    */
   public static sumOfMany(...numbers: number[]): number {
     let total = 0;
-    let i = 0;
-    for (i = 0; i < numbers.length; i++) {
+    for (let i=0; i<numbers.length; i++) {
       total += numbers[i];
     }
     return total;
-    throw new Error('Not yet implemented');
   }
 
   /**
    * should return true if the given value is of type Number. otherwise it should return false
    */
   public static isNumber(value: any): boolean {
-    if (typeof value === "number") {
-      return true;
-    } else {
-      return false;
-    }
-    throw new Error('Not yet implemented');
+    return typeof value === "number"
   }
 
   /**
@@ -42,12 +34,11 @@ export class Numbers {
    */
   public static isNumeric(value: any): boolean {
     // return !isNaN(value);
-    if (isNaN(value) == true || value == null) {
+    if (isNaN(value) === true || value === null) {
       return false;
     } else {
       return true;
     }
-    throw new Error('Not yet implemented');
   }
 
   /**
@@ -55,26 +46,24 @@ export class Numbers {
    */
   public static isDividableBy(num: number, divisor: number): boolean {
     return Number.isInteger(num / divisor);
-    throw new Error('Not yet implemented');
   }
 
   /**
    * should return true if the given number is Odd. otherwise it should return false
    */
   public static isOddNumber(num: number): boolean {
-    if (num % 2 != 0 && !isNaN(num)) {
+    if (num % 2 !== 0 && !isNaN(num)) {
       return true;
     } else {
       return false;
     }
-    throw new Error('Not yet implemented');
   }
 
   /**
    * should return the faculty of the given number
    */
   public static faculty(num: number): number {
-    if (num == 0 || num == 1) {
+    if (num === 0 || num === 1) {
       return 1;
     } 
     else {
@@ -84,7 +73,6 @@ export class Numbers {
       }
       return faculty;
     }
-    throw new Error('Not yet implemented');
   }
 
   /**
@@ -102,7 +90,6 @@ export class Numbers {
     }
   
 return recurseFibo([1,1], n);  
-    throw new Error('Not yet implemented');
   }
 
 
@@ -110,14 +97,21 @@ return recurseFibo([1,1], n);
    * should read a given binary string and return the respective decimal number
    */
   public static readBinaryString(binary: string): number {
-    throw new Error('Not yet implemented');
-  }
+    const binaryArr = Array.from(binary, Number);
+    let total = 0;
+    for (let i=0;i<binaryArr.length;i++) {
+        total += (binaryArr[i])*(2**((binaryArr.length-1)-i));
+    }
+    return total;
+
+  } 
 
 
   /**
    * should return the binary representation of a given decimal number
    */
   public static getBinaryString(num: number): string {
+    
     throw new Error('Not yet implemented');
   }
 }
