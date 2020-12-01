@@ -18,11 +18,12 @@ yarn solutions
 ```
 
 Once this is done you should be able to run the following npm tasks:
+- `yarn solutions`: create `*.solution.ts` files from `*.template.ts` if solution file does not exist
 - `yarn test`: run linter and test-suites for all unit-tests
 - `yarn play`: run nodemon on file `./src/playground.ts` and watch for changes
 - `yarn lint`: run static code checks
-- `yarn web`: run webpack-dev-server and bring up mars-rover mission-control
-- `yarn solutions`: create `*.solution.ts` files from `*.template.ts` if solution file does not exist
+- `yarn rover`: run webpack-dev-server and bring up mars-rover mission-control
+- `yarn solar`: run webpack-dev-server and bring up solar-system-simulation
 
 ### Order Recommendation
 

@@ -7,7 +7,8 @@
     "play": "nodemon",
     "test": "yarn lint && jest",
     "lint": "eslint . --ext .ts",
-    "web": "webpack serve",
+    "rover": "webpack serve --entry ./src/web/mars-rover/index.ts",
+    "solar": "webpack serve --entry ./src/web/solar-system/index.ts",
     "solutions": "ts-node ./src/util/solutions.ts"
   },
   "repository": {
@@ -42,6 +43,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "dependencies": {
-    "axios": "^0.21.0"
+    "axios": "^0.21.0",
+    "three": "^0.123.0"
   }
 }

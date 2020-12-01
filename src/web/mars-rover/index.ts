@@ -1,3 +1,4 @@
+import '../styles/index.scss';
 import {MissionControl} from './core/MissionControl';
 import './styles.scss';
 
