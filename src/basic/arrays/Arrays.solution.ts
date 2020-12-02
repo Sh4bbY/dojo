@@ -76,6 +76,7 @@ export class Arrays {
    * returns a new array with the same items but in ascending order of the given property
    */
   public static sortObjects(values: any[], property: string): any[] {
+    
     throw new Error("Not yet implemented");
   }
 
@@ -121,9 +122,7 @@ export class Arrays {
       });
       return inputArray;
     }
-    return (
-      sortArray(a).join().toLowerCase() === sortArray(b).join().toLowerCase()
-    );
+    return sortArray(a).join().toLowerCase() === sortArray(b).join().toLowerCase();
   }
 
   /**
@@ -136,11 +135,7 @@ export class Arrays {
   /**
    * should reduce a array to a single value by the help of a function and one initial value
    */
-  public static reduce<T, R>(
-    array: T[],
-    fn: (accu: R, item: T, index?: number) => R,
-    initial: R
-  ): R {
+  public static reduce<T, R>(array: T[], fn: (accu: R, item: T, index?: number) => R, initial: R): R {
     // const output = array.reduce(fn());
     //   return output;
     throw new Error("Not yet implemented");
@@ -150,10 +145,7 @@ export class Arrays {
    * should find the median of the combination of 2 sorted arrays.
    * @difficulty: medium-hard
    */
-  public static findMedianSortedArrays(
-    nums1: number[],
-    nums2: number[]
-  ): number {
+  public static findMedianSortedArrays(nums1: number[], nums2: number[]): number {
     function emptyArrayToZero(array) {
       if (Array.isArray(array) && !(array.length > 0)) {
         array = [0];
@@ -162,8 +154,7 @@ export class Arrays {
     }
     const reducer = (prev, curr) => prev + curr;
     return (
-      (emptyArrayToZero(nums1).reduce(reducer) +
-        emptyArrayToZero(nums2).reduce(reducer)) /
+      (emptyArrayToZero(nums1).reduce(reducer) + emptyArrayToZero(nums2).reduce(reducer)) /
       (nums1.length + nums2.length)
     );
   }
