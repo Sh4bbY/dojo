@@ -110,7 +110,7 @@ describe('Numbers', () => {
     });
   });
 
-  xdescribe('getBinaryString', () => {
+  describe('getBinaryString', () => {
     it('should return the binary representation of a given decimal number', () => {
       expect(Numbers.getBinaryString(1)).toBe('1');
       expect(Numbers.getBinaryString(0)).toBe('0');

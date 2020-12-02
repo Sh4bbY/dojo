@@ -106,6 +106,20 @@ export class Numbers {
    * should return the binary representation of a given decimal number
    */
   public static getBinaryString(num: number): string {
-    throw new Error("Not yet implemented");
+    let bin = [];
+    let remaining = 0;
+    let quotient = 0;
+    if (num === 0) {
+      bin = [0];
+    }
+    while (num != 0) {
+      remaining = num % 2;
+    
+      quotient = Math.floor(num / 2);
+      num = quotient;
+      bin.unshift(remaining);
+    }
+    
+    return bin.join('');
   }
 }
