@@ -1,18 +1,18 @@
 import '../styles/index.scss';
-import {Earth} from './Earth';
-import {Mars} from './Mars';
-import {Moon} from './Moon';
+import {Earth, Mars, Moon, Sun} from './objects';
 import {SolarSystem} from './SolarSystem';
-import {Sun} from './Sun';
 
 const solarSystem = new SolarSystem('#app');
 const sun = new Sun();
+
 const earth = new Earth();
-earth.setCenterOfGravity(sun, 60);
+earth.setCenterOfGravity(sun, 150);
+
 const mars = new Mars();
-mars.setCenterOfGravity(sun, 100);
+mars.setCenterOfGravity(sun, 200);
+
 const moon = new Moon();
-moon.setCenterOfGravity(earth, 10);
+moon.setCenterOfGravity(earth, 25);
 
 solarSystem.addObject(sun);
 solarSystem.addObject(earth);

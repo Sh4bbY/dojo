@@ -2,7 +2,7 @@ import {
   BufferGeometry, Camera, Float32BufferAttribute, Light, MathUtils, PCFSoftShadowMap, PerspectiveCamera, PointLight, Points, PointsMaterial, Scene, WebGLRenderer,
 } from 'three';
 import {OrbitControls} from 'three/examples/jsm/controls/OrbitControls';
-import {OrbitalObject} from './OrbitalObject';
+import {OrbitalObject} from './objects/OrbitalObject';
 
 export class SolarSystem {
   private readonly scene: Scene;
@@ -59,6 +59,11 @@ export class SolarSystem {
     if (!this.pause) {
       const time = this.frameCount++ * this.timeFactor;
       this.objects.forEach(obj => obj.animate(time));
+
+      if (this.cameraTarget < this.objects.length) {
+        const position = this.objects[this.cameraTarget].mesh.position;
+        this.controls.target.set(position.x, position.y, position.z);
+      }
     }
 
     this.controls.update();
@@ -97,6 +102,7 @@ export class SolarSystem {
     this.light = new PointLight();
     this.light.position.set(0, 0, 0);
     this.light.castShadow = true;
+    this.light.intensity = 1;
     this.scene.add(this.light);
   }
 

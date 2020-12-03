@@ -9,7 +9,7 @@ import {OrbitalObject} from './OrbitalObject';
  */
 export class Earth extends OrbitalObject {
   constructor() {
-    super(6, Earth.getMaterial());
+    super(6.371, Earth.getMaterial());
     this.mesh.position.x = 40;
     this.mesh.castShadow = true;
     this.mesh.receiveShadow = true;

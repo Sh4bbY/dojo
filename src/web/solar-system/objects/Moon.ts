@@ -9,7 +9,7 @@ import {OrbitalObject} from './OrbitalObject';
  */
 export class Moon extends OrbitalObject {
   constructor() {
-    super(1.7, Moon.getMaterial());
+    super(1.737, Moon.getMaterial());
     this.mesh.castShadow = true;
     this.mesh.receiveShadow = true;
   }
@@ -17,7 +17,7 @@ export class Moon extends OrbitalObject {
   public animate(time) {
     this.mesh.position.x = this.center.mesh.position.x + (this.distanceToCenter * Math.cos(time * 5));
     this.mesh.position.z = this.center.mesh.position.z + (this.distanceToCenter * Math.sin(time * 5));
-    this.mesh.rotation.y -= this.distanceToCenter * 0.001;
+    this.mesh.rotation.y -= this.distanceToCenter * 0.0006;
   }
 
   private static getMaterial() {
