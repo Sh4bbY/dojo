@@ -23,7 +23,7 @@ describe('Async', () => {
     });
   });
 
-  describe('repeatExecution', () => {
+  xdescribe('repeatExecution', () => {
     it('should repeat a function call n times within an specified interval duration', async () => {
       const callback = fn();
       const ms = 10;
@@ -41,7 +41,7 @@ describe('Async', () => {
     });
   });
 
-  describe('repeatExecutionNTimes', () => {
+  xdescribe('repeatExecutionNTimes', () => {
     it('should repeat a function call n times in a interval duration N times', async () => {
       const callback = fn();
       const ms = 10;
@@ -58,7 +58,7 @@ describe('Async', () => {
     });
   });
 
-  describe('enterCallbackHell', () => {
+  xdescribe('enterCallbackHell', () => {
     it('should call [asyncFn] 4 times and call [callback] with the sum of all 4 return values', async () => {
       const callback = fn();
       let index = 0;
@@ -75,7 +75,7 @@ describe('Async', () => {
     });
   });
 
-  describe('workWithPromises', () => {
+  xdescribe('workWithPromises', () => {
     it('should call [asyncFn] 4 times and call [callback] with the sum of all 4 return values', async () => {
       let index = 0;
       const asyncFn = () => new Promise<number>((resolve) => {
@@ -88,7 +88,7 @@ describe('Async', () => {
     });
   });
 
-  describe('workWithAsyncAwait', () => {
+  xdescribe('workWithAsyncAwait', () => {
     it('should call [asyncFn] 4 times and call [callback] with the sum of all 4 return values', async () => {
       let index = 0;
       const asyncFn = () => new Promise<number>((resolve) => {
@@ -101,7 +101,7 @@ describe('Async', () => {
     });
   });
 
-  describe('workWithPromiseAll', () => {
+  xdescribe('workWithPromiseAll', () => {
     it('should call [asyncFn] 4 times and call [callback] with the sum of all 4 return values', async () => {
       let index = 0;
       const asyncFn = () => new Promise<number>((resolve, _reject) => {
@@ -114,7 +114,7 @@ describe('Async', () => {
     });
   });
 
-  describe('requestApi', () => {
+  xdescribe('requestApi', () => {
     it('should request a endpoint and give back result as Json', async () => {
       const result = await Async.requestApi('https://jsonplaceholder.typicode.com/posts/42');
       expect(result).toHaveProperty('userId', 5);
@@ -124,7 +124,7 @@ describe('Async', () => {
   });
 
 
-  describe('promisedFileRead', () => {
+  xdescribe('promisedFileRead', () => {
     it('should read a file async and return the content of the file in a Promise', async () => {
       const filePath = path.join(process.cwd(), 'package.json');
       const content = await Async.promisedFileRead(filePath);

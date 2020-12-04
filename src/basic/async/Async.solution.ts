@@ -1,6 +1,5 @@
-import {StaticInterface} from '../../util/static.decorator';
-import {AsyncInterface} from './Async.interface';
-
+import { StaticInterface } from "../../util/static.decorator";
+import { AsyncInterface } from "./Async.interface";
 
 @StaticInterface<AsyncInterface>()
 export class Async {
@@ -8,7 +7,7 @@ export class Async {
    * calls function [fn] after a specified amount of [ms] milliseconds and passes the result of [fn] to [callback]
    */
   public static delayExecution(fn: () => any, ms: number, callback: (result: any) => void) {
-    throw new Error('Not yet implemented');
+    
   }
 
   /**
@@ -17,7 +16,7 @@ export class Async {
    * the function should also return the interval-handle to clear the interval.
    */
   public static repeatExecution(fn: () => void, ms: number): NodeJS.Timeout {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 
   /**
@@ -25,16 +24,18 @@ export class Async {
    * [ms] is the duration between each repeated function call.
    */
   public static repeatExecutionNTimes(fn: () => void, ms: number, times: number) {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
-
 
   /**
    * should call [asyncFn] 4 times and then call the callback [done] with the sum of all 4 results as parameter.
    * [asyncFn] expects a callback to be passed as parameter, which is called with the result once it is available.
    */
-  public static enterCallbackHell(asyncFn: (callback: (value: number) => void) => void, done: (result: number) => void) {
-    throw new Error('Not yet implemented');
+  public static enterCallbackHell(
+    asyncFn: (callback: (value: number) => void) => void,
+    done: (result: number) => void
+  ) {
+    throw new Error("Not yet implemented");
   }
 
   /**
@@ -42,7 +43,7 @@ export class Async {
    * This can be done sequentially or in parallel.
    */
   public static workWithPromises(asyncFn: () => Promise<number>): Promise<number> {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 
   /**
@@ -50,7 +51,7 @@ export class Async {
    * Make use of async / await syntax
    */
   public static async workWithAsyncAwait(asyncFn: () => Promise<number>): Promise<number> {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 
   /**
@@ -58,7 +59,7 @@ export class Async {
    * Make use of the Promise.all() function
    */
   public static async workWithPromiseAll(asyncFn: () => Promise<number>): Promise<number> {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 
   /**
@@ -66,7 +67,7 @@ export class Async {
    * to perform the request, you can use axios as http client.
    */
   public static async requestApi(url: string): Promise<any> {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 
   /**
@@ -77,6 +78,6 @@ export class Async {
    * - and rejects the promise with message "File could not be read" in case there was an error.
    */
   public static async promisedFileRead(filePath: string): Promise<any> {
-    throw new Error('Not yet implemented');
+    throw new Error("Not yet implemented");
   }
 }

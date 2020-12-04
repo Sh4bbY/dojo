@@ -31,7 +31,7 @@ describe('Strings', () => {
     });
   });
 
-  describe('replaceOccurrence', () => {
+  xdescribe('replaceOccurrence', () => {
     it('should count the occurrence of a given word within a string', () => {
       expect(Strings.replaceOccurrence('Fuzzy Wuzzy was a bear. Fuzzy Wuzzy had no hair. Fuzzy Wuzzy wasn’t fuzzy, was he?', {Fuzzy: 'Cool'}))
         .toBe('Cool Wuzzy was a bear. Cool Wuzzy had no hair. Cool Wuzzy wasn’t fuzzy, was he?');
@@ -73,7 +73,7 @@ describe('Strings', () => {
     });
   });
 
-  describe('isPalindrome', () => {
+  xdescribe('isPalindrome', () => {
     it('should return true if a given string is a palindrome', () => {
       expect(Strings.isPalindrome('aha')).toBe(true);
       expect(Strings.isPalindrome('anna')).toBe(true);
@@ -88,7 +88,7 @@ describe('Strings', () => {
     });
   });
 
-  describe('findRepeatedDnaSequences', () => {
+  xdescribe('findRepeatedDnaSequences', () => {
     it('should return all dna sequences that are 10 chars long and repeated at least twice', () => {
       expect(Strings.findRepeatedDnaSequences('AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT')).toStrictEqual(['AAAAACCCCC', 'CCCCCAAAAA']);
       expect(Strings.findRepeatedDnaSequences('AAAAAAAAAAAAA')).toStrictEqual(['AAAAAAAAAA']);

@@ -48,10 +48,7 @@ export class Strings {
   /**
    * returns a modified string where all keys of the replace object got replaced with their respective values
    */
-  public static replaceOccurrence(
-    str: string,
-    replace: { [key: string]: string }
-  ): string {
+  public static replaceOccurrence(str: string, replace: { [key: string]: string }): string {
     const array = str;
     const toReplace: string[] = Object.keys(replace);
     const replacer = Object.values(replace);
@@ -62,7 +59,21 @@ export class Strings {
    * returns a object with all characters of the given string as keys with the count of occurrences as value.
    */
   public static countCharacters(str: string): { [char: string]: number } {
-    throw new Error("Not yet implemented");
+    
+    let outputObj = {};
+    function countCharacter(char, str) {
+      const output = [];
+      let indexOfStr = str.indexOf(char);
+      while (indexOfStr != -1) {
+        output.push(indexOfStr);
+        indexOfStr = str.indexOf(char, indexOfStr + 1);
+      }
+      return output.length;
+    }
+    for (let i = 0; i < str.length; i++) {
+      outputObj[str[i]] = countCharacter(str[i], str);
+    }
+    return outputObj;
   }
 
   /**

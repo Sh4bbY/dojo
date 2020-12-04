@@ -1,15 +1,17 @@
-let num = 1;
-let bin = 0;
-let remaining = 0;
-let quotient = 0;
-let i = 1;  
+const str = "test";
+// const char = "t";
 
-while (num != 0) {
-  remaining = num % 2;
-  quotient = Math.floor(num / 2);
-  num = quotient;
-  bin += remaining * i;
-  i = i * 10;
+function countCharacter(char, str) {
+  const output = [];
+  let indexOfWord = str.indexOf(char);
+  while (indexOfWord != -1) {
+    output.push(indexOfWord);
+    indexOfWord = str.indexOf(char, indexOfWord + 1);
+  }
+  return output.length;
 }
-
-console.log(bin);
+let outputObj = {};
+for (let i = 0; i < str.length; i++) {
+  outputObj[str[i]] = countCharacter(str[i], str);
+}
+console.log(outputObj);
