@@ -73,7 +73,7 @@ describe('Strings', () => {
     });
   });
 
-  xdescribe('isPalindrome', () => {
+  describe('isPalindrome', () => {
     it('should return true if a given string is a palindrome', () => {
       expect(Strings.isPalindrome('aha')).toBe(true);
       expect(Strings.isPalindrome('anna')).toBe(true);

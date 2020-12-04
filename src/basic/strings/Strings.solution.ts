@@ -59,7 +59,6 @@ export class Strings {
    * returns a object with all characters of the given string as keys with the count of occurrences as value.
    */
   public static countCharacters(str: string): { [char: string]: number } {
-    
     let outputObj = {};
     function countCharacter(char, str) {
       const output = [];
@@ -80,7 +79,7 @@ export class Strings {
    * returns a object with all characters of the given string as keys with the count of occurrences as value.
    */
   public static isPalindrome(str: string): boolean {
-    throw new Error("Not yet implemented");
+    return str === str.split("").reverse().join("");
   }
 
   /**
