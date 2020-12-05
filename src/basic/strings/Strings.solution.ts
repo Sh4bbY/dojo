@@ -93,8 +93,22 @@ export class Strings {
    * Output: ["AAAAACCCCC","CCCCCAAAAA"]
    */
   public static findRepeatedDnaSequences(str: string): string[] {
- 
-    
-    throw new Error("Not yet implemented");
+    function findSubstring(substring, subStringEnd) {
+      if (str.includes(substring, subStringEnd)) {
+        return substring;
+      }
+      return;
+    }
+    // findSubstring(substring);
+    let output = [];
+    for (let i = 0; i < str.length - 10; i++) {
+
+      let subString = str.substring(i, i+10);
+      if (findSubstring(subString, i+10) != undefined) {
+        output.push(findSubstring(subString, i+10));
+      }
+    }
+
+    return output;
   }
 }
