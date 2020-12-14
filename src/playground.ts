@@ -9,22 +9,36 @@
  * Output: ["AAAAACCCCC","CCCCCAAAAA"]
  */
 
-const str = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
-    function findSubstring(substring, subStringEnd) {
-      if (str.includes(substring, subStringEnd)) {
-        return substring;
-      }
-      return;
-    }
-    // findSubstring(substring);
-    let output = [];
-    for (let i = 0; i < str.length - 10; i++) {
-      const subStringEnd = i+1;
-      let subString = str.substring(i, i+10);
-      if (findSubstring(subString, subStringEnd) != undefined) {
-        output.push(findSubstring(subString, subStringEnd));
-      }
-    }
+const str = "AAAAAAAAAAAAAA";
+// const str = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
+function findSubstring(substring, subStringEnd) {
+  if (str.includes(substring, subStringEnd)) {
+    return substring;
+  }
+  return;
+}
 
-    console.log(output);
+function countOccurrence(str, subString): number {
+    const output = [];
+    let indexOfWord = str.indexOf(subString);
+    while (indexOfWord != -1) {
+      output.push(indexOfWord);
+      indexOfWord = str.indexOf(subString, indexOfWord + 1);
+    }
+    return output.length;
+  }
+
+// output.includes(subString);
+// findSubstring(substring);
+let output = [];
+for (let i = 0; i < str.length - 10; i++) {
+  const subStringEnd = i + 1;
+  let subString = str.substring(i, i + 10);
+  if (findSubstring(subString, subStringEnd) != undefined && countOccurrence(output, subString) <1) {
+    output.push(findSubstring(subString, subStringEnd));
   
+  }
+
+
+}
+console.log(output);

@@ -99,16 +99,27 @@ export class Strings {
       }
       return;
     }
+
+    function countOccurrence(str, subString): number {
+      const counter = [];
+      let indexOfWord = str.indexOf(subString);
+      while (indexOfWord != -1) {
+        counter.push(indexOfWord);
+        indexOfWord = str.indexOf(subString, indexOfWord + 1);
+      }
+      return counter.length;
+    }
+
+    // output.includes(subString);
     // findSubstring(substring);
     let output = [];
     for (let i = 0; i < str.length - 10; i++) {
-
-      let subString = str.substring(i, i+10);
-      if (findSubstring(subString, i+10) != undefined) {
-        output.push(findSubstring(subString, i+10));
+      const subStringEnd = i + 1;
+      let subString = str.substring(i, i + 10);
+      if (findSubstring(subString, subStringEnd) != undefined && countOccurrence(output, subString) < 1) {
+        output.push(findSubstring(subString, subStringEnd));
       }
     }
-
     return output;
   }
 }

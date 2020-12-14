@@ -108,12 +108,10 @@ export class Numbers {
   public static getBinaryString(num: number): string {
     let bin = 0;
     let remaining = 0;
-    let quotient = 0;
     let i = 1;
     while (num != 0) {
       remaining = num % 2;
-      quotient = Math.floor(num / 2);
-      num = quotient;
+      num = Math.floor(num / 2);
       bin += remaining * i;
       i = i * 10;
     }
