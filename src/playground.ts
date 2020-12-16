@@ -1,1 +1,6 @@
-expect(Arrays.reduce([1, 2, 3, 4], (sum, n) => sum + n, 0)).toBe(10);
+  /**
+   * returns a new array with the same items but in ascending order of the given property
+   */
+  public static sortObjects(values: any[], property: string): any[] {
+    throw new Error("Not yet implemented");
+  }

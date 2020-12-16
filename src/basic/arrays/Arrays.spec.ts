@@ -99,7 +99,7 @@ describe('Arrays', () => {
     });
   });
 
-  xdescribe('reduce', () => {
+  describe('reduce', () => {
     it('should reduce a array to a single value by the help of a function and one initial value', () => {
       expect(Arrays.reduce([1, 2, 3, 4], (sum, n) => sum + n, 0)).toBe(10);
       expect(Arrays.reduce(['a', 'b', 'c'], (str, c) => str + c + '!', '')).toBe('a!b!c!');
