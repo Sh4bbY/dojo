@@ -56,7 +56,7 @@ describe('Arrays', () => {
     });
   });
 
-  xdescribe('sortObjects', () => {
+  describe('sortObjects', () => {
     const objects = [
       {name: 'John', age: 48},
       {name: 'Zoe', age: 9},

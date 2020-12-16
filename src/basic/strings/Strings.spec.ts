@@ -31,7 +31,7 @@ describe('Strings', () => {
     });
   });
 
-  xdescribe('replaceOccurrence', () => {
+  describe('replaceOccurrence', () => {
     it('should count the occurrence of a given word within a string', () => {
       expect(Strings.replaceOccurrence('Fuzzy Wuzzy was a bear. Fuzzy Wuzzy had no hair. Fuzzy Wuzzy wasn’t fuzzy, was he?', {Fuzzy: 'Cool'}))
         .toBe('Cool Wuzzy was a bear. Cool Wuzzy had no hair. Cool Wuzzy wasn’t fuzzy, was he?');

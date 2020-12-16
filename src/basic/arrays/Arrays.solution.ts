@@ -98,7 +98,7 @@ export class Arrays {
    */
   public static similar(a: any[], b: any[]): boolean {
     function sortArray(inputArray) {
-      if (typeof a[0] != "number") {
+      if (typeof a[0] !== "number") {
         inputArray.sort(function (a, b) {
           if (a.toLowerCase() < b.toLowerCase()) {
             return -1;

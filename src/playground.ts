@@ -1,8 +1,1 @@
-const fn = () => 'test';
-
-function timer() {
-  setTimeout(fn, 100);
-}
-
-console.log(timer());
- 
+expect(Arrays.reduce([1, 2, 3, 4], (sum, n) => sum + n, 0)).toBe(10);

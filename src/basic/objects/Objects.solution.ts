@@ -8,11 +8,9 @@ export class Objects {
    * it should return false, if the value is an Array, Date, null, string, or number.
    */
   public static isPlainObject(value: any): boolean {
-
-    if(value != null) {
+    if (value !== null || value !== []) {
       return typeof value === "object";
-    }
-    else return false;
+    } else return false;
   }
 
   /**
@@ -41,14 +39,22 @@ export class Objects {
    * return true when 2 simple objects a and b are equal
    */
   public static equals(a: any, b: any): boolean {
-  return JSON.stringify(a) === JSON.stringify(b);
-    throw new Error("Not yet implemented");
+    let counter = 0;
+    if (Object.keys(a).length === Object.keys(b).length) {
+      for (let i = 0; i < Object.values(a).length; i++) {
+        if (Object.keys(a)[i] === Object.keys(b)[i] && Object.values(a)[i] === Object.values(b)[i]) {
+          counter++;
+        }
+      }
+    }
+
+    return counter === Object.values(a).length;
   }
 
   /**
    * return true when 2 nested objects a and b are deeply equal
    */
   public static deepEquals(a: any, b: any): boolean {
-  return JSON.stringify(a) === JSON.stringify(b);
+    return JSON.stringify(a) === JSON.stringify(b);
   }
 }

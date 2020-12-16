@@ -38,7 +38,7 @@ export class Strings {
   public static countOccurrence(str: string, word: string): number {
     const output = [];
     let indexOfWord = str.indexOf(word);
-    while (indexOfWord != -1) {
+    while (indexOfWord !== -1) {
       output.push(indexOfWord);
       indexOfWord = str.indexOf(word, indexOfWord + 1);
     }
@@ -49,21 +49,21 @@ export class Strings {
    * returns a modified string where all keys of the replace object got replaced with their respective values
    */
   public static replaceOccurrence(str: string, replace: { [key: string]: string }): string {
-    const array = str;
-    const toReplace: string[] = Object.keys(replace);
-    const replacer = Object.values(replace);
-    throw new Error("Not yet implemented");
+    for (let i = 0; i < Object.values(replace).length; i++) {
+      str = str.split(Object.keys(replace)[i]).join(Object.values(replace)[i]);
+    }
+    return str;
   }
 
   /**
    * returns a object with all characters of the given string as keys with the count of occurrences as value.
    */
   public static countCharacters(str: string): { [char: string]: number } {
-    let outputObj = {};
+    const outputObj = {};
     function countCharacter(char, str) {
       const output = [];
       let indexOfStr = str.indexOf(char);
-      while (indexOfStr != -1) {
+      while (indexOfStr !== -1) {
         output.push(indexOfStr);
         indexOfStr = str.indexOf(char, indexOfStr + 1);
       }
@@ -103,7 +103,7 @@ export class Strings {
     function countOccurrence(str, subString): number {
       const counter = [];
       let indexOfWord = str.indexOf(subString);
-      while (indexOfWord != -1) {
+      while (indexOfWord !== -1) {
         counter.push(indexOfWord);
         indexOfWord = str.indexOf(subString, indexOfWord + 1);
       }
@@ -112,11 +112,11 @@ export class Strings {
 
     // output.includes(subString);
     // findSubstring(substring);
-    let output = [];
+    const output = [];
     for (let i = 0; i < str.length - 10; i++) {
       const subStringEnd = i + 1;
-      let subString = str.substring(i, i + 10);
-      if (findSubstring(subString, subStringEnd) != undefined && countOccurrence(output, subString) < 1) {
+      const subString = str.substring(i, i + 10);
+      if (findSubstring(subString, subStringEnd) !== undefined && countOccurrence(output, subString) < 1) {
         output.push(findSubstring(subString, subStringEnd));
       }
     }

@@ -81,7 +81,7 @@ export class Numbers {
       if (array.length === n) {
         return array;
       }
-      let newFibo = array[array.length - 2] + array[array.length - 1];
+      const newFibo = array[array.length - 2] + array[array.length - 1];
 
       array.push(newFibo);
       return recurseFibo(array, n);
@@ -109,7 +109,7 @@ export class Numbers {
     let bin = 0;
     let remaining = 0;
     let i = 1;
-    while (num != 0) {
+    while (num !== 0) {
       remaining = num % 2;
       num = Math.floor(num / 2);
       bin += remaining * i;
