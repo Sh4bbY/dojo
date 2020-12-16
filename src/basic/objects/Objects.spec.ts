@@ -2,7 +2,7 @@ import {Objects} from './Objects.solution';
 
 describe('Objects', () => {
 
-  describe('isPlainObject', () => {
+  xdescribe('isPlainObject', () => {
     it('should return true if a given value is a plain object', () => {
       expect(Objects.isPlainObject({})).toBe(true);
       expect(Objects.isPlainObject({a: 1, b: 2})).toBe(true);
@@ -17,19 +17,19 @@ describe('Objects', () => {
     });
   });
 
-  describe('getKeys', () => {
+  xdescribe('getKeys', () => {
     it('should return all object keys as array of strings', () => {
       expect(Objects.getKeys({a: 1, b: 2, c: 3})).toStrictEqual(['a', 'b', 'c']);
     });
   });
 
-  describe('getValues', () => {
+  xdescribe('getValues', () => {
     it('should return all object values in an array', () => {
       expect(Objects.getValues({a: 1, b: 2, c: 3})).toStrictEqual([1, 2, 3]);
     });
   });
 
-  describe('merge', () => {
+  xdescribe('merge', () => {
     it('should merge two object together', () => {
       const objA = {a: 1, b: 2};
       const objB = {c: 3, d: 4};

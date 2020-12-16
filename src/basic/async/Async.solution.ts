@@ -1,3 +1,4 @@
+import { sleep } from "../../util/sleep";
 import { StaticInterface } from "../../util/static.decorator";
 import { AsyncInterface } from "./Async.interface";
 
@@ -7,7 +8,10 @@ export class Async {
    * calls function [fn] after a specified amount of [ms] milliseconds and passes the result of [fn] to [callback]
    */
   public static delayExecution(fn: () => any, ms: number, callback: (result: any) => void) {
-    
+    function timeOut() {
+      return callback;
+    } 
+    return setTimeout(timeOut, ms);
   }
 
   /**
@@ -16,7 +20,8 @@ export class Async {
    * the function should also return the interval-handle to clear the interval.
    */
   public static repeatExecution(fn: () => void, ms: number): NodeJS.Timeout {
-    throw new Error("Not yet implemented");
+    return setInterval(fn, ms);
+    // throw new Error("Not yet implemented");
   }
 
   /**

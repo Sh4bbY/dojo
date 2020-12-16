@@ -8,7 +8,11 @@ export class Objects {
    * it should return false, if the value is an Array, Date, null, string, or number.
    */
   public static isPlainObject(value: any): boolean {
-    throw new Error("Not yet implemented");
+
+    if(value != null) {
+      return typeof value === "object";
+    }
+    else return false;
   }
 
   /**
@@ -30,13 +34,14 @@ export class Objects {
    * a and b should not be changed!
    */
   public static merge(a: any, b: any): any {
-    throw new Error("Not yet implemented");
+    return { ...a, ...b };
   }
 
   /**
    * return true when 2 simple objects a and b are equal
    */
   public static equals(a: any, b: any): boolean {
+  return JSON.stringify(a) === JSON.stringify(b);
     throw new Error("Not yet implemented");
   }
 
@@ -44,6 +49,6 @@ export class Objects {
    * return true when 2 nested objects a and b are deeply equal
    */
   public static deepEquals(a: any, b: any): boolean {
-    throw new Error("Not yet implemented");
+  return JSON.stringify(a) === JSON.stringify(b);
   }
 }

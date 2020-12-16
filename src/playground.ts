@@ -1,44 +1,10 @@
-/**
- * All DNA is composed of a series of nucleotides abbreviated as 'A', 'C', 'G', and 'T', for example: "ACGAATTCCG".
- * When studying DNA, it is sometimes useful to identify repeated sequences within the DNA.
- *
- * Write a function to find all the 10-letter-long sequences (substrings) that occur more than once in a DNA molecule.
- *
- * Example 1:
- * Input: str = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT"
- * Output: ["AAAAACCCCC","CCCCCAAAAA"]
- */
-
-const str = "AAAAAAAAAAAAAA";
-// const str = "AAAAACCCCCAAAAACCCCCCAAAAAGGGTTT";
-function findSubstring(substring, subStringEnd) {
-  if (str.includes(substring, subStringEnd)) {
-    return substring;
-  }
-  return;
+let i=0;
+function testasd() {
+  console.log("test");
+  i++;
+  console.log(i);
 }
-
-function countOccurrence(str, subString): number {
-    const output = [];
-    let indexOfWord = str.indexOf(subString);
-    while (indexOfWord != -1) {
-      output.push(indexOfWord);
-      indexOfWord = str.indexOf(subString, indexOfWord + 1);
-    }
-    return output.length;
-  }
-
-// output.includes(subString);
-// findSubstring(substring);
-let output = [];
-for (let i = 0; i < str.length - 10; i++) {
-  const subStringEnd = i + 1;
-  let subString = str.substring(i, i + 10);
-  if (findSubstring(subString, subStringEnd) != undefined && countOccurrence(output, subString) <1) {
-    output.push(findSubstring(subString, subStringEnd));
-  
-  }
+setInterval(testasd, 1000);
 
 
-}
-console.log(output);
+
