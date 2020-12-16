@@ -8,10 +8,7 @@ export class Async {
    * calls function [fn] after a specified amount of [ms] milliseconds and passes the result of [fn] to [callback]
    */
   public static delayExecution(fn: () => any, ms: number, callback: (result: any) => void) {
-    function timeOut() {
-      return callback;
-    } 
-    return setTimeout(timeOut, ms);
+    return setTimeout(fn, ms);
   }
 
   /**
@@ -21,7 +18,6 @@ export class Async {
    */
   public static repeatExecution(fn: () => void, ms: number): NodeJS.Timeout {
     return setInterval(fn, ms);
-    // throw new Error("Not yet implemented");
   }
 
   /**
@@ -29,7 +25,15 @@ export class Async {
    * [ms] is the duration between each repeated function call.
    */
   public static repeatExecutionNTimes(fn: () => void, ms: number, times: number) {
-    throw new Error("Not yet implemented");
+    let interval = setInterval(fn, ms);
+
+    function timer () {
+      setTimeout(() => {
+       clearInterval(interval);
+    }, 1+times*ms);
+  }
+  return timer();
+
   }
 
   /**

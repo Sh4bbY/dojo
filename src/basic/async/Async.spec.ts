@@ -23,7 +23,7 @@ describe('Async', () => {
     });
   });
 
-  describe('repeatExecution', () => {
+  xdescribe('repeatExecution', () => {
     it('should repeat a function call n times within an specified interval duration', async () => {
       const callback = fn();
       const ms = 10;
@@ -41,7 +41,7 @@ describe('Async', () => {
     });
   });
 
-  xdescribe('repeatExecutionNTimes', () => {
+  describe('repeatExecutionNTimes', () => {
     it('should repeat a function call n times in a interval duration N times', async () => {
       const callback = fn();
       const ms = 10;

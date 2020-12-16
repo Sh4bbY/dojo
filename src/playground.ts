@@ -1,10 +1,8 @@
-let i=0;
-function testasd() {
-  console.log("test");
-  i++;
-  console.log(i);
+const fn = () => 'test';
+
+function timer() {
+  setTimeout(fn, 100);
 }
-setInterval(testasd, 1000);
 
-
-
+console.log(timer());
+ 
