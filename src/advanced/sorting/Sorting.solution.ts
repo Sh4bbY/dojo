@@ -10,7 +10,7 @@ export class Sorting {
           const tmp = array[j];
           array[j] = array[j + 1];
           array[j + 1] = tmp;
-          console.log(array);
+          // console.log(array);
         }
       }
     }
