@@ -30,7 +30,7 @@ export class Async {
     function timer() {
       setTimeout(() => {
         clearInterval(interval);
-      }, 1 + times * ms);
+      },  times * ms);
     }
     return timer();
   }

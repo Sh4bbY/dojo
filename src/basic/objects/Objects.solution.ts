@@ -8,9 +8,8 @@ export class Objects {
    * it should return false, if the value is an Array, Date, null, string, or number.
    */
   public static isPlainObject(value: any): boolean {
-    if (value !== null || value !== []) {
-      return typeof value === "object";
-    } else return false;
+  return Object.prototype.toString.call(value) === "[object Object]";
+
   }
 
   /**
