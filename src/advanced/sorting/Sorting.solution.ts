@@ -22,7 +22,20 @@ export class Sorting {
    * @See: https://de.wikipedia.org/wiki/Selectionsort
    */
   public static selectionSort<T>(array: T[]): T[] {
-    throw new Error("Not yet implemented");
+    let compareIndex = 0;
+    while (compareIndex < array.length) {
+      for (let searchIndex = compareIndex + 1; searchIndex < array.length; searchIndex++) {
+        if (array[searchIndex] < array[compareIndex]) {
+          [array[searchIndex], array[compareIndex]] = [array[compareIndex], array[searchIndex]];
+        }
+      }
+
+      compareIndex++;
+
+      // console.log(array);
+    }
+
+    return array;
   }
 
   /**
@@ -30,8 +43,16 @@ export class Sorting {
    * @See: https://de.wikipedia.org/wiki/Insertionsort
    */
   public static insertionSort<T>(array: T[]): T[] {
-    throw new Error("Not yet implemented");
+for (let i = 0; i < array.length; i++) {
+  let toSort = array[i];
+  let j = i;
+  while (j > 0 && array[j - 1] > toSort) {
+    array[j] = array[j - 1];
+    j = j - 1;
   }
+  array[j] = toSort;
+}
+return array;  }
 
   /**
    * should sort a list of numbers with use of the quick sort algorithm

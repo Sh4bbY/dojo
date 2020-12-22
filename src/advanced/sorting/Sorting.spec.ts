@@ -16,7 +16,7 @@ describe('Sorting', () => {
     });
   });
 
-  xdescribe('insertionSort', () => {
+  describe('insertionSort', () => {
     it('should sort the given array with insertionSort', () => {
       const arr = [5, 3, 1, 5, 9, 4, 7, 33, 32, 11, 98, 75, 10];
       expect(Sorting.insertionSort(arr)).toStrictEqual([1, 3, 4, 5, 5, 7, 9, 10, 11, 32, 33, 75, 98]);

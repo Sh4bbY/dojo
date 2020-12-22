@@ -8,7 +8,7 @@ export class Async {
    * calls function [fn] after a specified amount of [ms] milliseconds and passes the result of [fn] to [callback]
    */
   public static delayExecution(fn: () => any, ms: number, callback: (result: any) => void) {
-      setTimeout(() => callback(fn()), ms);
+    setTimeout(() => callback(fn()), ms);
   }
 
   /**
@@ -25,14 +25,18 @@ export class Async {
    * [ms] is the duration between each repeated function call.
    */
   public static repeatExecutionNTimes(fn: () => void, ms: number, times: number) {
-    const interval = setInterval(fn, ms);
-
+    var i = 1;
+    var interval = setInterval(fn, ms);
     function timer() {
-      setTimeout(() => {
+      if (i === times) {
         clearInterval(interval);
-      },  times * ms);
+      } else {
+        fn;
+        i++;
+        //  console.log(i);
+      }
     }
-    return timer();
+    //  console.log(i);
   }
 
   /**
