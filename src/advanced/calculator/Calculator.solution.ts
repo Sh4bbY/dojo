@@ -3,11 +3,11 @@ import {CalculatorInterface} from './Calculator.interface';
 export class Calculator implements CalculatorInterface {
 
   press(value: string) {
-    throw new Error('Not yet implemented');
+    return value;
   }
 
   calculate(input?: string): number {
-    throw new Error('Not yet implemented');
+    return eval(input);
   }
 
   private static createTerms(input) {
@@ -15,15 +15,15 @@ export class Calculator implements CalculatorInterface {
   }
 
   private static resolve(operation: string, a: number, b: number): number {
-    throw new Error('Not yet implemented');
+    return eval(a + operation + b);
   }
 
   private static isOperation(char: string): boolean {
-    throw new Error('Not yet implemented');
+    return eval(1 + char + 1) < 3;
   }
 
   private static isNumber(char: string): boolean {
-    throw new Error('Not yet implemented');
+    return typeof Number(char) === "number";
   }
 
   private static isValidInput(char: string): boolean {

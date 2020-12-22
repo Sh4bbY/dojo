@@ -43,16 +43,17 @@ export class Sorting {
    * @See: https://de.wikipedia.org/wiki/Insertionsort
    */
   public static insertionSort<T>(array: T[]): T[] {
-for (let i = 0; i < array.length; i++) {
-  let toSort = array[i];
-  let j = i;
-  while (j > 0 && array[j - 1] > toSort) {
-    array[j] = array[j - 1];
-    j = j - 1;
+    for (let i = 0; i < array.length; i++) {
+      let toSort = array[i];
+      let j = i;
+      while (j > 0 && array[j - 1] > toSort) {
+        array[j] = array[j - 1];
+        j = j - 1;
+      }
+      array[j] = toSort;
+    }
+    return array;
   }
-  array[j] = toSort;
-}
-return array;  }
 
   /**
    * should sort a list of numbers with use of the quick sort algorithm

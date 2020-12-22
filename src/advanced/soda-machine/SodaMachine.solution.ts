@@ -8,6 +8,7 @@ export class SodaMachine extends AbstractSodaMachine {
   }
 
   public insertCoin(coin: Coin): void {
+    // SodaMachine.coin = 
     throw new Error('Not yet implemented');
   }
 
