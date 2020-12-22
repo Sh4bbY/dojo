@@ -14,11 +14,13 @@ export class Numbers {
    * should return the sum of all numbers
    */
   public static sumOfMany(...numbers: number[]): number {
-    let total = 0;
-    for (let i = 0; i < numbers.length; i++) {
-      total += numbers[i];
-    }
-    return total;
+    // let total = 0;
+    // for (let i = 0; i < numbers.length; i++) {
+    //   total += numbers[i];
+    // }
+    // return total;
+
+    return numbers.reduce((sum, curr) => sum + curr);
   }
 
   /**
@@ -51,11 +53,7 @@ export class Numbers {
    * should return true if the given number is Odd. otherwise it should return false
    */
   public static isOddNumber(num: number): boolean {
-    if (num % 2 !== 0 && !isNaN(num)) {
-      return true;
-    } else {
-      return false;
-    }
+    return num % 2 !== 0 && !isNaN(num);
   }
 
   /**

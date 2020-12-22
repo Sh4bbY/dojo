@@ -35,12 +35,21 @@ export class Arrays {
    * returns a new array where all even numbers are be multiplied by 2
    */
   public static duplicateEven(values: number[]): number[] {
-    for (let i = 0; i < values.length; i++) {
-      if (values[i] % 2 === 0) {
-        values[i] *= 2;
+    // for (let i = 0; i < values.length; i++) {
+    //   if (values[i] % 2 === 0) {
+    //     values[i] *= 2;
+    //   }
+    // }
+    // return values;
+    const fn = function (x) {
+      if (x % 2 === 0) {
+        x *= 2;
       }
-    }
-    return values;
+      return x;
+    };
+    const output = values.map(fn);
+
+    return output;
   }
 
   /**
@@ -76,22 +85,22 @@ export class Arrays {
    * returns a new array with the same items but in ascending order of the given property
    */
   public static sortObjects(values: any[], property: string): any[] {
-  if (property === "age") {
-    return values.sort(function (x, y) {
-      return x.age - y.age;
-    });
-  }
-  if (property === "name") {
-    return values.sort(function (a, b) {
-      if (a.name < b.name) {
-        return -1;
-      }
-      if (a.name > b.name) {
-        return 1;
-      }
-      return 0;
-    });
-  }
+    if (property === "age") {
+      return values.sort(function (x, y) {
+        return x.age - y.age;
+      });
+    }
+    if (property === "name") {
+      return values.sort(function (a, b) {
+        if (a.name < b.name) {
+          return -1;
+        }
+        if (a.name > b.name) {
+          return 1;
+        }
+        return 0;
+      });
+    }
   }
 
   /**
@@ -151,8 +160,6 @@ export class Arrays {
    */
   public static reduce<T, R>(array: T[], fn: (accu: R, item: T, index?: number) => R, initial: R): R {
     return array.reduce(fn, initial);
-
-    // throw new Error("Not yet implemented");
   }
 
   /**
@@ -162,11 +169,10 @@ export class Arrays {
   public static findMedianSortedArrays(nums1: number[], nums2: number[]): number {
     function emptyArrayToZero(array) {
       if (Array.isArray(array) && !(array.length > 0)) {
-        array = [0];
-        return array;
+        return (array = [0]);
       } else return array;
     }
-    const reducer = (prev, curr) => prev + curr;
+    const reducer = (sum, curr) => sum + curr;
     return (
       (emptyArrayToZero(nums1).reduce(reducer) + emptyArrayToZero(nums2).reduce(reducer)) /
       (nums1.length + nums2.length)
