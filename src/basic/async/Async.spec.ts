@@ -101,7 +101,7 @@ describe('Async', () => {
     });
   });
 
-  xdescribe('workWithPromiseAll', () => {
+  describe('workWithPromiseAll', () => {
     it('should call [asyncFn] 4 times and call [callback] with the sum of all 4 return values', async () => {
       let index = 0;
       const asyncFn = () => new Promise<number>((resolve, _reject) => {
@@ -114,7 +114,7 @@ describe('Async', () => {
     });
   });
 
-  xdescribe('requestApi', () => {
+  describe('requestApi', () => {
     it('should request a endpoint and give back result as Json', async () => {
       const result = await Async.requestApi('https://jsonplaceholder.typicode.com/posts/42');
       expect(result).toHaveProperty('userId', 5);
@@ -124,7 +124,7 @@ describe('Async', () => {
   });
 
 
-  xdescribe('promisedFileRead', () => {
+  describe('promisedFileRead', () => {
     it('should read a file async and return the content of the file in a Promise', async () => {
       const filePath = path.join(process.cwd(), 'package.json');
       const content = await Async.promisedFileRead(filePath);

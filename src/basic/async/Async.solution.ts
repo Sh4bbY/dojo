@@ -1,7 +1,10 @@
+import axios from "axios";
 import { RuleTester } from "eslint";
 import { sleep } from "../../util/sleep";
 import { StaticInterface } from "../../util/static.decorator";
 import { AsyncInterface } from "./Async.interface";
+
+import * as fs from "fs";
 
 @StaticInterface<AsyncInterface>()
 export class Async {
@@ -94,27 +97,12 @@ export class Async {
    */
   public static async workWithAsyncAwait(asyncFn: () => Promise<number>): Promise<number> {
     let result = 0;
-    async function initiate() {
-      await asyncFn();
-      (value) => {
-        result += value;
-      };
-      await asyncFn();
-      (value) => {
-        result += value;
-      };
-      await asyncFn();
-      (value) => {
-        result += value;
-      };
-      await asyncFn();
-      (value) => {
-        result += value;
-      };
-      return result;
-    }
-    return initiate();
-    throw new Error("Not yet implemented");
+
+    result = await asyncFn();
+    result += await asyncFn();
+    result += await asyncFn();
+    result += await asyncFn();
+    return result;
   }
 
   /**
@@ -122,9 +110,9 @@ export class Async {
    * Make use of the Promise.all() function
    */
   public static async workWithPromiseAll(asyncFn: () => Promise<number>): Promise<number> {
-    return;
-
-    throw new Error("Not yet implemented");
+    const output = await Promise.all([asyncFn(), asyncFn(), asyncFn(), asyncFn()]);
+    return output.reduce((sum, curr) => sum + curr, 0);
+    // throw new Error("Not yet implemented");
   }
 
   /**
@@ -132,7 +120,8 @@ export class Async {
    * to perform the request, you can use axios as http client.
    */
   public static async requestApi(url: string): Promise<any> {
-    throw new Error("Not yet implemented");
+    const response = await axios.get(url);
+    return response.data;
   }
 
   /**
@@ -143,6 +132,13 @@ export class Async {
    * - and rejects the promise with message "File could not be read" in case there was an error.
    */
   public static async promisedFileRead(filePath: string): Promise<any> {
-    throw new Error("Not yet implemented");
+    return new Promise((resolve, reject) => {
+      fs.readFile(filePath, "utf-8", (error, data) => {
+        if (error) {
+          return reject("File could not be read");
+        }
+        resolve(data);
+      });
+    });
   }
 }
