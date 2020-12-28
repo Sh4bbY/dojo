@@ -1,3 +1,4 @@
+import { RuleTester } from "eslint";
 import { sleep } from "../../util/sleep";
 import { StaticInterface } from "../../util/static.decorator";
 import { AsyncInterface } from "./Async.interface";
@@ -8,9 +9,12 @@ export class Async {
    * calls function [fn] after a specified amount of [ms] milliseconds and passes the result of [fn] to [callback]
    */
   public static delayExecution(fn: () => any, ms: number, callback: (result: any) => void) {
-    setTimeout(() => callback(fn()), ms);
+    setTimeout(() => {
+      // const result = (() => "test")();
+      const result = fn();
+      callback(result);
+    }, ms);
   }
-
   /**
    * should call a given function [fn] repetitively.
    * [ms] is the duration between each repeated function call.
@@ -25,18 +29,14 @@ export class Async {
    * [ms] is the duration between each repeated function call.
    */
   public static repeatExecutionNTimes(fn: () => void, ms: number, times: number) {
-    var i = 1;
-    var interval = setInterval(fn, ms);
-    function timer() {
-      if (i === times) {
+    let loops = 0;
+    let interval = setInterval(function () {
+      fn();
+      loops++;
+      if (loops >= times) {
         clearInterval(interval);
-      } else {
-        fn;
-        i++;
-        //  console.log(i);
       }
-    }
-    //  console.log(i);
+    }, ms);
   }
 
   /**
@@ -47,7 +47,21 @@ export class Async {
     asyncFn: (callback: (value: number) => void) => void,
     done: (result: number) => void
   ) {
-    throw new Error("Not yet implemented");
+    let result = 0;
+
+    asyncFn((value) => {
+      result += value;
+      asyncFn((value) => {
+        result += value;
+        asyncFn((value) => {
+          result += value;
+          asyncFn((value) => {
+            result += value;
+            done(result);
+          });
+        });
+      });
+    });
   }
 
   /**
@@ -55,7 +69,23 @@ export class Async {
    * This can be done sequentially or in parallel.
    */
   public static workWithPromises(asyncFn: () => Promise<number>): Promise<number> {
-    throw new Error("Not yet implemented");
+    let result = 0;
+    return asyncFn()
+      .then((value) => {
+        result += value;
+        return asyncFn();
+      })
+      .then((value) => {
+        result += value;
+        return asyncFn();
+      })
+      .then((value) => {
+        result += value;
+        return asyncFn();
+      })
+      .then((value) => {
+        return (result += value);
+      });
   }
 
   /**
@@ -63,6 +93,27 @@ export class Async {
    * Make use of async / await syntax
    */
   public static async workWithAsyncAwait(asyncFn: () => Promise<number>): Promise<number> {
+    let result = 0;
+    async function initiate() {
+      await asyncFn();
+      (value) => {
+        result += value;
+      };
+      await asyncFn();
+      (value) => {
+        result += value;
+      };
+      await asyncFn();
+      (value) => {
+        result += value;
+      };
+      await asyncFn();
+      (value) => {
+        result += value;
+      };
+      return result;
+    }
+    return initiate();
     throw new Error("Not yet implemented");
   }
 
@@ -71,6 +122,8 @@ export class Async {
    * Make use of the Promise.all() function
    */
   public static async workWithPromiseAll(asyncFn: () => Promise<number>): Promise<number> {
+    return;
+
     throw new Error("Not yet implemented");
   }
 

@@ -41,15 +41,13 @@ export class Arrays {
     //   }
     // }
     // return values;
-    const fn = function (x) {
+
+    return values.map((x) => {
       if (x % 2 === 0) {
         x *= 2;
       }
       return x;
-    };
-    const output = values.map(fn);
-
-    return output;
+    });
   }
 
   /**
@@ -65,26 +63,24 @@ export class Arrays {
    * returns a new array with the same items in given order
    */
   public static sortStrings(values: string[], ascendingOrder = true): string[] {
-    const output = values.sort(function (a, b) {
+    return values.sort(function (a, b) {
       if (a.toLowerCase() < b.toLowerCase()) {
-        return -1;
-      } else if (a.toLowerCase() > b.toLowerCase()) {
-        return 1;
-      } else {
-        return 0;
+        // return -1;
+
+        //tenäre operatoren
+        return ascendingOrder ? -1 : 1;
       }
+      if (a.toLowerCase() > b.toLowerCase()) {
+        return ascendingOrder ? 1 : -1;
+      }
+      return 0;
     });
-    if (ascendingOrder === true) {
-      return output;
-    } else {
-      return output.reverse();
-    }
   }
 
   /**
    * returns a new array with the same items but in ascending order of the given property
    */
-  public static sortObjects(values: any[], property: string): any[] {
+  public static sortObjects2(values: any[], property: string): any[] {
     if (property === "age") {
       return values.sort(function (x, y) {
         return x.age - y.age;
@@ -103,23 +99,51 @@ export class Arrays {
     }
   }
 
+  public static sortObjects(values: any[], property: string): any[] {
+    return values.sort((a, b) => {
+      if (property === "age") {
+        return a.age - b.age;
+      }
+      if (property === "name") {
+        return a.name.toLowerCase() < b.name.toLowerCase() ? -1 : a.name.toLowerCase() > b.name.toLowerCase() ? 1 : 0;
+      }
+    });
+  }
+
   /**
    * returns true when a and b are identical.
    */
   public static equals(a: any[], b: any[]): boolean {
-    let counter = 0;
     for (let i = 1; i <= a.length; i++) {
-      if (a[i] === b[i]) {
-        counter += 1;
+      if (a[i] !== b[i]) {
+        return false;
       }
     }
-    return counter === a.length;
+    return true;
+
+    // let counter = 0;
+    // for (let i = 1; i <= a.length; i++) {
+    //   if (a[i] === b[i]) {
+    //     counter += 1;
+    //   }
+    // }
+    // return counter === a.length;
   }
 
   /**
    * returns true when a and b contains the same items, even tough the order is not the same.
    */
   public static similar(a: any[], b: any[]): boolean {
+    if (a.length !== b.length) {
+      return false;
+    }
+
+    const aInB = a.reduce((result, value) => result && b.includes(value), true);
+    const bInA = b.reduce((result, value) => result && a.includes(value), true);
+    return aInB && bInA;
+  }
+
+  public static similar2(a: any[], b: any[]): boolean {
     function sortArray(inputArray) {
       if (typeof a[0] !== "number") {
         inputArray.sort(function (a, b) {
@@ -152,6 +176,7 @@ export class Arrays {
    * TODO: ...
    */
   public static map<T>(array: T[], fn: (item: T) => T): T[] {
+    //funktion nachbauen
     return array.map(fn);
   }
 
@@ -159,6 +184,7 @@ export class Arrays {
    * should reduce a array to a single value by the help of a function and one initial value
    */
   public static reduce<T, R>(array: T[], fn: (accu: R, item: T, index?: number) => R, initial: R): R {
+    //funktion nachbauen
     return array.reduce(fn, initial);
   }
 
@@ -167,15 +193,9 @@ export class Arrays {
    * @difficulty: medium-hard
    */
   public static findMedianSortedArrays(nums1: number[], nums2: number[]): number {
-    function emptyArrayToZero(array) {
-      if (Array.isArray(array) && !(array.length > 0)) {
-        return (array = [0]);
-      } else return array;
-    }
     const reducer = (sum, curr) => sum + curr;
-    return (
-      (emptyArrayToZero(nums1).reduce(reducer) + emptyArrayToZero(nums2).reduce(reducer)) /
-      (nums1.length + nums2.length)
-    );
+    const totalLength = nums1.length + nums2.length;
+    const totalSum = nums1.reduce(reducer, 0) + nums2.reduce(reducer, 0);
+    return totalSum / totalLength;
   }
 }

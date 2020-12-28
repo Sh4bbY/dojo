@@ -11,7 +11,6 @@ describe('SodaMachine', () => {
     ],
     coins: {
       [Coin.C5]: 10,
-      [Coin.C5]: 10,
       [Coin.C10]: 10,
       [Coin.C20]: 10,
       [Coin.C50]: 10,

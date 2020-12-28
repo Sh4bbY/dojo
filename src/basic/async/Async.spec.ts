@@ -58,7 +58,7 @@ describe('Async', () => {
     });
   });
 
-  xdescribe('enterCallbackHell', () => {
+  describe('enterCallbackHell', () => {
     it('should call [asyncFn] 4 times and call [callback] with the sum of all 4 return values', async () => {
       const callback = fn();
       let index = 0;
@@ -75,7 +75,7 @@ describe('Async', () => {
     });
   });
 
-  xdescribe('workWithPromises', () => {
+  describe('workWithPromises', () => {
     it('should call [asyncFn] 4 times and call [callback] with the sum of all 4 return values', async () => {
       let index = 0;
       const asyncFn = () => new Promise<number>((resolve) => {
@@ -88,7 +88,7 @@ describe('Async', () => {
     });
   });
 
-  xdescribe('workWithAsyncAwait', () => {
+  describe('workWithAsyncAwait', () => {
     it('should call [asyncFn] 4 times and call [callback] with the sum of all 4 return values', async () => {
       let index = 0;
       const asyncFn = () => new Promise<number>((resolve) => {

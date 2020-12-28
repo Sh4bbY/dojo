@@ -8,8 +8,7 @@ export class Objects {
    * it should return false, if the value is an Array, Date, null, string, or number.
    */
   public static isPlainObject(value: any): boolean {
-  return Object.prototype.toString.call(value) === "[object Object]";
-
+    return Object.prototype.toString.call(value) === "[object Object]";
   }
 
   /**
@@ -31,6 +30,8 @@ export class Objects {
    * a and b should not be changed!
    */
   public static merge(a: any, b: any): any {
+    //destructor = ...
+
     return { ...a, ...b };
   }
 
@@ -38,12 +39,15 @@ export class Objects {
    * return true when 2 simple objects a and b are equal
    */
   public static equals(a: any, b: any): boolean {
+
+    //reduce anwenden
     let counter = 0;
-    if (Object.keys(a).length === Object.keys(b).length) {
-      for (let i = 0; i < Object.values(a).length; i++) {
-        if (Object.keys(a)[i] === Object.keys(b)[i] && Object.values(a)[i] === Object.values(b)[i]) {
-          counter++;
-        }
+    if (Object.keys(a).length != Object.keys(b).length) {
+      return false;
+    }
+    for (let i = 0; i < Object.values(a).length; i++) {
+      if (Object.keys(a)[i] === Object.keys(b)[i] && Object.values(a)[i] === Object.values(b)[i]) {
+        counter++;
       }
     }
 

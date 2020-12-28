@@ -19,8 +19,7 @@ export class Numbers {
     //   total += numbers[i];
     // }
     // return total;
-
-    return numbers.reduce((sum, curr) => sum + curr);
+    return numbers.reduce((sum, curr) => sum + curr, 0);
   }
 
   /**
@@ -34,12 +33,8 @@ export class Numbers {
    * should return true if the given value is numeric. otherwise it should return false
    */
   public static isNumeric(value: any): boolean {
-    // return !isNaN(value);
-    if (isNaN(value) === true || value === null) {
-      return false;
-    } else {
-      return true;
-    }
+    // return !(isNaN(value) || value === null);
+    return !isNaN(value) && value !== null;
   }
 
   /**
@@ -62,13 +57,13 @@ export class Numbers {
   public static faculty(num: number): number {
     if (num === 0 || num === 1) {
       return 1;
-    } else {
-      let faculty = 1;
-      for (let i = 2; i <= num; i++) {
-        faculty *= i;
-      }
-      return faculty;
     }
+
+    let faculty = 1;
+    for (let i = 2; i <= num; i++) {
+      faculty *= i;
+    }
+    return faculty;
   }
 
   /**

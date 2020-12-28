@@ -27,6 +27,8 @@ export class Calculator implements CalculatorInterface {
   }
 
   private static isValidInput(char: string): boolean {
+
+    //regexp?
     throw new Error('Not yet implemented');
   }
 }
