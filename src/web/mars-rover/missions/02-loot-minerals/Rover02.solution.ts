@@ -72,19 +72,16 @@ export class Rover02 extends Rover01 {
       return;
     }
     //move x axis
-    if (x !== 0) {
       this.moveXAxis(x);
-    }
+    
 
     //move y axis
-    if (y !== 0) {
       this.moveYAxis(y);
-    }
     console.log(this.x, this.y);
-    return;
   }
+
   // public
-  public getMineralCoords() {
+  public getItemsCoords(items) {
     // console.log(this.surface.surfaceItems);
     const minerals = this.surface.surfaceItems.filter((item) => item.type === SurfaceItemType.MINERAL);
     let coordArr = [];
@@ -93,11 +90,15 @@ export class Rover02 extends Rover01 {
       let newCoord = { x: minerals[i].x, y: minerals[i].y };
       coordArr.push(newCoord);
     }
-    console.log(coordArr);
+    return coordArr;
   }
 
   public async lootItems(items: SurfaceItem[]) {
-    console.log(items);
-    throw new Error("Not yet implemented");
+    const mineralCoords = this.getItemsCoords(items);
+
+    for (let i = 0; i < items.length; i++) {
+      this.moveToPosition(mineralCoords[i].x, mineralCoords[i].y);
+      this.pickUp();
+    }
   }
 }
