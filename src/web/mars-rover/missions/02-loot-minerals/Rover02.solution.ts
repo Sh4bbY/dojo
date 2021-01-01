@@ -43,51 +43,40 @@ export class Rover02 extends Rover01 {
         break;
     }
   }
-  public moveXAxis(input) {
-    this.turnToEast();
-    console.log("turned east");
-    if (input > this.x) {
-      this.moveForwardNSteps(input - this.x - 1);
+  public moveAxis(input, axis) {
+    if (axis === "x") {
+      axis = this.x;
+      this.turnToEast();
     }
-    if (input < this.x) {
-      this.moveBackwardNSteps(this.x - input - 1);
+    if (axis === "y") {
+      axis = this.y;
+      this.turnToSouth();
     }
-  }
-
-  public moveYAxis(input) {
-    this.turnToSouth();
-    console.log("turned east");
-    if (input > this.y) {
-      this.moveForwardNSteps(input - this.y - 1);
+    if (input > axis) {
+      this.moveForwardNSteps(input - axis - 1);
     }
-    if (input < this.y) {
-      this.moveBackwardNSteps(this.y - input - 1);
+    if (input < axis) {
+      this.moveBackwardNSteps(axis - input - 1);
     }
   }
 
   public moveToPosition(x, y) {
-    // errorhandling
     if (this.x === x && this.y === y) {
-      console.log("already there");
       return;
     }
     //move x axis
-      this.moveXAxis(x);
-    
+    this.moveAxis(x, "x");
 
     //move y axis
-      this.moveYAxis(y);
-    console.log(this.x, this.y);
+    this.moveAxis(y, "y");
   }
 
   // public
   public getItemsCoords(items) {
-    // console.log(this.surface.surfaceItems);
-    const minerals = this.surface.surfaceItems.filter((item) => item.type === SurfaceItemType.MINERAL);
     let coordArr = [];
 
-    for (let i = 0; i < minerals.length; i++) {
-      let newCoord = { x: minerals[i].x, y: minerals[i].y };
+    for (let i = 0; i < items.length; i++) {
+      let newCoord = { x: items[i].x, y: items[i].y };
       coordArr.push(newCoord);
     }
     return coordArr;
