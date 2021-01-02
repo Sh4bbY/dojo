@@ -10,6 +10,23 @@ export class Rover02 extends Rover01 {
    * try to enhance the Rover with functionalities that prove the robot handling in the protocol
    */
 
+  public turnToNorth() {
+    switch (this.direction) {
+      case Direction.NORTH:
+        break;
+      case Direction.EAST:
+        this.turnLeft();
+        break;
+      case Direction.SOUTH:
+        this.turnLeft();
+        this.turnLeft();
+        break;
+      case Direction.WEST:
+        this.turnRight();
+        break;
+    }
+  }
+
   public turnToEast() {
     switch (this.direction) {
       case Direction.NORTH:
@@ -43,50 +60,91 @@ export class Rover02 extends Rover01 {
         break;
     }
   }
-  public moveAxis(input, axis) {
-    if (axis === "x") {
-      axis = this.x;
-      this.turnToEast();
-    }
-    if (axis === "y") {
-      axis = this.y;
-      this.turnToSouth();
-    }
-    if (input > axis) {
-      this.moveForwardNSteps(input - axis - 1);
-    }
-    if (input < axis) {
-      this.moveBackwardNSteps(axis - input - 1);
+
+  public turnToWest() {
+    switch (this.direction) {
+      case Direction.NORTH:
+        this.turnLeft();
+        break;
+      case Direction.EAST:
+        this.turnRight();
+        this.turnRight();
+        break;
+      case Direction.SOUTH:
+        this.turnRight();
+        break;
+      case Direction.WEST:
+        break;
     }
   }
 
-  public moveToPosition(x, y) {
+  public async moveToEast(){
+    throw new Error("not yet implemented");
+  }
+  
+  public async moveAxis(input, axis) {
+    if (axis === "x") {
+      axis = this.x;
+      if (input > axis) {
+        this.turnToEast();
+        await this.moveForwardNSteps(input - axis - 1);
+      }
+      if (input < axis) {
+        this.turnToWest();
+        await this.moveForwardNSteps(axis - input - 1);
+      }
+    }
+    if (axis === "y") {
+      axis = this.y;
+      if (input > axis) {
+        this.turnToSouth();
+        await this.moveForwardNSteps(input - axis - 1);
+      }
+      if (input < axis) {
+        this.turnToNorth();
+        await this.moveForwardNSteps(axis - input - 1);
+      }
+    }
+  }
+
+  public async moveToPosition(x, y) {
     if (this.x === x && this.y === y) {
       return;
     }
     //move x axis
-    this.moveAxis(x, "x");
+    await this.moveAxis(x, "x");
 
     //move y axis
-    this.moveAxis(y, "y");
+    await this.moveAxis(y, "y");
   }
 
   // public
   public getItemsCoords(items) {
+    // let coordObj = {};
     let coordArr = [];
 
     for (let i = 0; i < items.length; i++) {
       let newCoord = { x: items[i].x, y: items[i].y };
+      // coordObj[i] = newCoord;
       coordArr.push(newCoord);
     }
     return coordArr;
+    // return coordObj;
   }
 
   public async lootItems(items: SurfaceItem[]) {
-    const mineralCoords = this.getItemsCoords(items);
-
+    const mineralCoords = this.getItemsCoords(items).sort(function (a, b) {
+      if (a.x < b.x) {
+        return 1;
+      }
+      if (a.x > b.x) {
+        return -1;
+      }
+      return 0;
+    });
+    console.log(mineralCoords);
     for (let i = 0; i < items.length; i++) {
-      this.moveToPosition(mineralCoords[i].x, mineralCoords[i].y);
+      await this.moveToPosition(mineralCoords[i].x, mineralCoords[i].y);
       this.pickUp();
     }
   }

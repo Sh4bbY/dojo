@@ -13,6 +13,8 @@ export class Protocol02 extends AbstractMissionProtocol {
 
     await this.rover.lootItems(minerals);
     await this.rover.moveToPosition(0, 0);
+
+    // kürzester weg
   }
 
   public wasSuccessful(): boolean {

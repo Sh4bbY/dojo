@@ -3,15 +3,15 @@ import { SurfaceItem } from "../../core/SurfaceItem";
 
 export class Rover01 extends Rover {
   //move forward n felder
-  public moveForwardNSteps(n) {
+  public async moveForwardNSteps(n) {
     for (let i = 0; i <= n; i++) {
-      this.moveForward();
+      await this.moveForward();
     }
   }
 
-  public moveBackwardNSteps(n) {
+  public async moveBackwardNSteps(n) {
     for (let i = 0; i <= n; i++) {
-      this.moveBackward();
+      await this.moveBackward();
     }
   }
 
