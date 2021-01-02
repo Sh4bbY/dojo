@@ -136,13 +136,7 @@ export class Rover02 extends Rover01 {
 
   public async lootItems(items: SurfaceItem[]) {
     const mineralCoords = this.getItemsCoords(items).sort(function (a, b) {
-      if (a.x < b.x) {
-        return 1;
-      }
-      if (a.x > b.x) {
-        return -1;
-      }
-      return 0;
+      return a.x - b.x || a.y - b.y;
     });
     console.log(mineralCoords);
     for (let i = 0; i < items.length; i++) {
