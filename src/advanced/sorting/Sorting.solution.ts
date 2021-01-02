@@ -71,7 +71,7 @@ export class Sorting {
    */
   public static insertionSort<T>(array: T[]): T[] {
     for (let i = 0; i < array.length; i++) {
-      let toSort = array[i];
+      const toSort = array[i];
       let j = i;
       while (j > 0 && array[j - 1] > toSort) {
         array[j] = array[j - 1];

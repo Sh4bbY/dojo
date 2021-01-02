@@ -42,7 +42,7 @@ export class Objects {
 
     //reduce anwenden
     let counter = 0;
-    if (Object.keys(a).length != Object.keys(b).length) {
+    if (Object.keys(a).length !== Object.keys(b).length) {
       return false;
     }
     for (let i = 0; i < Object.values(a).length; i++) {

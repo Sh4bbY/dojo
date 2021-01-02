@@ -33,7 +33,7 @@ export class Async {
    */
   public static repeatExecutionNTimes(fn: () => void, ms: number, times: number) {
     let loops = 0;
-    let interval = setInterval(function () {
+    const interval = setInterval(function () {
       fn();
       loops++;
       if (loops >= times) {

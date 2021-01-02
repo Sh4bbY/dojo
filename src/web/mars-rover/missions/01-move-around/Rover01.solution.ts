@@ -21,7 +21,7 @@ export class Rover01 extends Rover {
     this.bag.push(item);
   }
 
-  public checkSurfaceForItems() {}
+  // public checkSurfaceForItems() {}
 
   /**
    * Add your code here!
