@@ -15,16 +15,33 @@ const cashMachine = new CashMachine({
     { id: 2, pin: 4567, balance: 20 },
     { id: 1, pin: 4321, balance: -20 },
   ],
+//   cashBox: [],
+
+  //   cashBox: {
+  //       5: 0,
+  //       10: 0,
+  //       20: 0,
+  //       50: 0,
+  //       100: 0,
+  //       200: 0,
+  //       500: 0,
+  //     },
 });
 
 console.log(cashMachine.login(1, 1234));
-console.log(cashMachine.getBalance());
-cashMachine.withdraw({ 100: 3, 500: 3 });
-console.log(cashMachine.getBalance());
-console.log(cashMachine.getStock());
+// console.log(cashMachine.getBalance());
+// cashMachine.withdraw({ 100: 3, 500: 3 });
+// console.log(cashMachine.getBalance());
+// console.log(cashMachine.getStock());
+// console.log(cashMachine.logout());
+
+const inputCash = {200: 2, 50: 1};
+const desiredCash = { 100:1, 20:16, 10:1, 5: 4};
+
+cashMachine.changeNotes(inputCash, desiredCash);
 console.log(cashMachine.logout());
-
-
+// console.log(cashMachine.getBalance());
+// console.log(cashMachine.getStock());
 
 // import { Coin } from "./advanced/soda-machine/Coin.enum";
 // import { SodaMachine } from "./advanced/soda-machine/SodaMachine.solution";

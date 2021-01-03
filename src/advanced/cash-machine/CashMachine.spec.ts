@@ -1,6 +1,6 @@
-import {CashMachine} from './CashMachine.solution';
+import { CashMachine } from "./CashMachine.solution";
 
-describe('CashMachine', () => {
+describe("CashMachine", () => {
   const cashMachine = new CashMachine({
     stock: {
       5: 100,
@@ -12,13 +12,21 @@ describe('CashMachine', () => {
       500: 50,
     },
     accounts: [
-      {id: 1, pin: 1234, balance: 1000},
-      {id: 2, pin: 4567, balance: 20},
-      {id: 1, pin: 4321, balance: -20},
+      { id: 1, pin: 1234, balance: 1000 },
+      { id: 2, pin: 4567, balance: 20 },
+      { id: 1, pin: 4321, balance: -20 },
     ],
+    // cashBox: [],
+    // cashBox: { 5: 0, 
+    //   10: 0, 
+    //   20: 0, 
+    //   50: 0, 
+    //   100: 0, 
+    //   200: 0, 
+    //   500: 0 },
   });
 
-  it('should allow to a customer to login', () => {
+  it("should allow to a customer to login", () => {
     cashMachine.login(1, 1234);
     // TODO: add tests
     // cashMachine.getBalance();
@@ -29,4 +37,3 @@ describe('CashMachine', () => {
     // expect(calc.result).toBe(2);
   });
 });
-
