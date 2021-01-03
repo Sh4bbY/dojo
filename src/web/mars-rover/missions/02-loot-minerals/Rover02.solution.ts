@@ -120,18 +120,12 @@ export class Rover02 extends Rover01 {
 
   // public
   public getItemsCoords(items) {
-    // let coordObj = {};
     const coordArr = [];
     items.forEach((newCoord) => {
       coordArr.push(newCoord = { x: newCoord.x, y: newCoord.y});
     });
-    // for (let i = 0; i < items.length; i++) {
-    //   let newCoord = { x: items[i].x, y: items[i].y };
-    //   // coordObj[i] = newCoord;
-    //   coordArr.push(newCoord);
-    // }
+
     return coordArr;
-    // return coordObj;
   }
 
   public async lootItems(items: SurfaceItem[]) {

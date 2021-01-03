@@ -33,7 +33,7 @@ export class Async {
    */
   public static repeatExecutionNTimes(fn: () => void, ms: number, times: number) {
     let loops = 0;
-    const interval = setInterval(function () {
+    const interval = setInterval( () => {
       fn();
       loops++;
       if (loops >= times) {
@@ -96,9 +96,7 @@ export class Async {
    * Make use of async / await syntax
    */
   public static async workWithAsyncAwait(asyncFn: () => Promise<number>): Promise<number> {
-    let result = 0;
-
-    result = await asyncFn();
+    let result = await asyncFn();
     result += await asyncFn();
     result += await asyncFn();
     result += await asyncFn();
@@ -112,7 +110,6 @@ export class Async {
   public static async workWithPromiseAll(asyncFn: () => Promise<number>): Promise<number> {
     const output = await Promise.all([asyncFn(), asyncFn(), asyncFn(), asyncFn()]);
     return output.reduce((sum, curr) => sum + curr, 0);
-    // throw new Error("Not yet implemented");
   }
 
   /**

@@ -5,6 +5,7 @@ export class LinkedList<T> implements ILinkedList<T> {
   private head: Node<T> = null;
 
   prepend(data: T) {
+    this.
     throw new Error('Not yet implemented');
   }
 
