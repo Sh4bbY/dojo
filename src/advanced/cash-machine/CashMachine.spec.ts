@@ -16,14 +16,7 @@ describe("CashMachine", () => {
       { id: 2, pin: 4567, balance: 20 },
       { id: 1, pin: 4321, balance: -20 },
     ],
-    // cashBox: [],
-    // cashBox: { 5: 0, 
-    //   10: 0, 
-    //   20: 0, 
-    //   50: 0, 
-    //   100: 0, 
-    //   200: 0, 
-    //   500: 0 },
+    cashBox: { 5: 0, 10: 0, 20: 0, 50: 0, 100: 0, 200: 0, 500: 0 },
   });
 
   it("should allow to a customer to login", () => {
