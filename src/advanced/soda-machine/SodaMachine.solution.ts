@@ -12,41 +12,50 @@ export class SodaMachine extends AbstractSodaMachine {
     // }
     //zu credit adden, wenn was ausgewählt ist und der preis stimmt, produkt ausgeben + wechselgeld
     this.credit.push(coin);
-
-    if (this.product && this.creditSum() >= this.product.price) {
+    if (this.product && this.product.price < this.creditSum()) {
       this.creditToCashback();
-      this.releaseProduct();
-      delete this.product;
     }
-          // console.log(this.coins);
+    if (this.product && this.product.price === this.creditSum()) {
+      this.releaseProduct();
+      this.product = null;
+    }
+    // console.log(this.coins);
   }
 
   public creditToCashback() {
-    const overpaid = this.creditSum() - this.product.price;
-    // console.log(overpaid);
+    console.log(this.product);
+    let overpaid = this.creditSum() - this.product.price;
+    console.log(overpaid);
     if (overpaid > 0) {
-    this.credit.forEach((coin) => this.coins[coin]++);
-    console.log(this.product.price);
+      // this.credit.forEach((coin) => this.coins[coin]++);
+      //for loop can interrupt
+      Object.entries(this.coins)
+        .slice()
+        .reverse()
+        .forEach((coin) => {
+          if (Number(coin[0]) <= overpaid) {
+            this.cashBack.push(Number(coin[0]));
+            overpaid -= Number(coin[0]);
+          }
+          console.log(overpaid);
+          console.log(this.cashBack);
+        });
     }
-      // for (let i = 0 ; overpaid > 0; i++){
-      //       console.log(this.coins);
-      //     // }
-      //     }
-      // console.log(overpaid);
-      // for (let i = 0 ; overpaid > 0; i++){
-      //   console.log(this.coins[i]);
-      // }
-      // let change = this.credit.indexOf(overpaid);
-      // get money from coins
-      // if (change !== -1) {
-      //   this.cashBack.push(this.credit[change]);
-      // }
-      //put coins in machine
-    
+
+    // for(let i = this.coins.length; overpaid>0;i--) {
+    //   if (this.coins[i] <= overpaid) {
+    //     this.cashBack[this.coins[i]]++;
+    //     overpaid -= this.coins[i];
+    //   }
+    // console.log(this.coins);
+
+    // }
+
     if (overpaid === 0) {
       this.settle();
     }
   }
+
   private settle() {
     this.credit.forEach((coin) => this.coins[coin]++);
     this.credit = [];
