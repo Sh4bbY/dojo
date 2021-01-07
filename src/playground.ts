@@ -78,26 +78,30 @@ const products = [
   { id: 4, name: "Ginger Ale" },
 ];
 
-sodaMachine.reset();
+// sodaMachine.reset();
 sodaMachine.selectProduct(products[0].id);
-sodaMachine.getSelection();
+// sodaMachine.getSelection();
 sodaMachine.insertCoin(Coin.E1);
 sodaMachine.insertCoin(Coin.C50);
 sodaMachine.insertCoin(Coin.C50);
 console.log(sodaMachine.getPurchases());
-console.log(sodaMachine.getCashBack());
-console.log(sodaMachine.getSelection());
-
-sodaMachine.insertCoin(Coin.E2);
-sodaMachine.insertCoin(Coin.C50);
-sodaMachine.insertCoin(Coin.C10);
+// console.log(sodaMachine.getCashBack());
+// console.log(sodaMachine.getSelection());
+console.log(sodaMachine.getCredit());
+console.log(sodaMachine.getCoinStock());
 sodaMachine.selectProduct(products[1].id);
+
+sodaMachine.insertCoin(Coin.E1);
+// sodaMachine.insertCoin(Coin.E2);
+sodaMachine.insertCoin(Coin.C50);
+// sodaMachine.insertCoin(Coin.C10);
+// sodaMachine.selectProduct(products[1].id);
 console.log(sodaMachine.getPurchases());
 
 console.log(sodaMachine.creditSum());
 
 console.log(sodaMachine.getCashBack());
-// console.log(sodaMachine.getCredit());
+console.log(sodaMachine.getCredit());
 // console.log(sodaMachine.creditSum());
 // console.log(sodaMachine.getSelection());
 

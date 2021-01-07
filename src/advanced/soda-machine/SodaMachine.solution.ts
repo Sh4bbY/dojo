@@ -12,35 +12,49 @@ export class SodaMachine extends AbstractSodaMachine {
     // }
     //zu credit adden, wenn was ausgewählt ist und der preis stimmt, produkt ausgeben + wechselgeld
     this.credit.push(coin);
-    if (this.product && this.product.price < this.creditSum()) {
+    
+    // if (this.product && this.product.price < this.creditSum()) {
+    //   this.creditToCashback();
+    // }
+    // if(this.product && this.product.price < this.creditSum()) {
+    //   this.creditToCashback();
+    // }
+    // console.log(this.creditSum());
+      
+    
+    if (this.product && this.product.price <= this.creditSum()) {
       this.creditToCashback();
-    }
-    if (this.product && this.product.price === this.creditSum()) {
       this.releaseProduct();
+      this.credit = [];
       this.product = null;
+      console.log(this.productBox);
     }
     // console.log(this.coins);
   }
-
+// 
   public creditToCashback() {
-    console.log(this.product);
+    // console.log(this.product);
     let overpaid = this.creditSum() - this.product.price;
-    console.log(overpaid);
-    if (overpaid > 0) {
+    // console.log(overpaid);
+    // if (overpaid > 0) {
+
       // this.credit.forEach((coin) => this.coins[coin]++);
       //for loop can interrupt
+      if(overpaid > 0) {
       Object.entries(this.coins)
         .slice()
         .reverse()
         .forEach((coin) => {
           if (Number(coin[0]) <= overpaid) {
             this.cashBack.push(Number(coin[0]));
+            // console.log(this.credit[coin[0]]); 
             overpaid -= Number(coin[0]);
           }
-          console.log(overpaid);
-          console.log(this.cashBack);
+          // console.log(overpaid);
+          // console.log(this.cashBack);
         });
-    }
+      }        
+    // }
 
     // for(let i = this.coins.length; overpaid>0;i--) {
     //   if (this.coins[i] <= overpaid) {
@@ -62,6 +76,8 @@ export class SodaMachine extends AbstractSodaMachine {
   }
 
   private releaseProduct() {
+    console.log(this.product.name);
+    
     this.productBox.push(this.product.name);
   }
 
@@ -73,6 +89,10 @@ export class SodaMachine extends AbstractSodaMachine {
     if (selection.amount === 0) {
       throw new Error(selection.name + " is out of stock");
     }
+    // if(this.creditSum() >= Number(selection.price)) {
+    //   console.log("yes");
+      
+    // }
     this.product = selection;
     selection.amount -= 1;
   }
