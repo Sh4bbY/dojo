@@ -35,13 +35,6 @@ export class Arrays {
    * returns a new array where all even numbers are be multiplied by 2
    */
   public static duplicateEven(values: number[]): number[] {
-    // for (let i = 0; i < values.length; i++) {
-    //   if (values[i] % 2 === 0) {
-    //     values[i] *= 2;
-    //   }
-    // }
-    // return values;
-
     return values.map((x) => {
       if (x % 2 === 0) {
         x *= 2;
@@ -120,14 +113,6 @@ export class Arrays {
       }
     }
     return true;
-
-    // let counter = 0;
-    // for (let i = 1; i <= a.length; i++) {
-    //   if (a[i] === b[i]) {
-    //     counter += 1;
-    //   }
-    // }
-    // return counter === a.length;
   }
 
   /**
