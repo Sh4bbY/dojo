@@ -2,8 +2,8 @@ import {Coin} from './Coin.enum';
 import {Product} from './Product.interface';
 
 export interface SodaMachineConfiguration {
-  coins: { [value: string]: number },
-  products: Product[],
+  coins: { [value: string]: number };
+  products: Product[];
 }
 
 export abstract class AbstractSodaMachine {

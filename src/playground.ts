@@ -35,7 +35,7 @@
 // // console.log(cashMachine.withdraw({ 100: 4, 10: 2 }));
 // // cashMachine.changeNotes(inputCash, desiredCash);
 // console.log(cashMachine.deposit(inputCash));
-// console.log(cashMachine.withdraw({ 200: 6 }));
+// console.log(cashMachine.withdraw({ 200: 6, 50: 10 }));
 // // console.log(cashMachine.withdraw({ 200: 4 }));
 
 // // console.log(cashMachine.getStock());
@@ -83,27 +83,48 @@ sodaMachine.selectProduct(products[0].id);
 // sodaMachine.getSelection();
 sodaMachine.insertCoin(Coin.E1);
 sodaMachine.insertCoin(Coin.C50);
+// sodaMachine.insertCoin(Coin.E1);
+
 sodaMachine.insertCoin(Coin.C50);
 console.log(sodaMachine.getPurchases());
-// console.log(sodaMachine.getCashBack());
-// console.log(sodaMachine.getSelection());
-console.log(sodaMachine.getCredit());
-console.log(sodaMachine.getCoinStock());
-sodaMachine.selectProduct(products[1].id);
-
-sodaMachine.insertCoin(Coin.E1);
-// sodaMachine.insertCoin(Coin.E2);
-sodaMachine.insertCoin(Coin.C50);
-// sodaMachine.insertCoin(Coin.C10);
-// sodaMachine.selectProduct(products[1].id);
-console.log(sodaMachine.getPurchases());
-
-console.log(sodaMachine.creditSum());
-
+// console.log(sodaMachine.getCredit());
 console.log(sodaMachine.getCashBack());
-console.log(sodaMachine.getCredit());
+// console.log(sodaMachine.getSelection());
+
+// // sodaMachine.selectProduct(products[1].id);
+sodaMachine.insertCoin(Coin.E2);
+sodaMachine.insertCoin(Coin.C50);
+sodaMachine.insertCoin(Coin.C10);
+// console.log(sodaMachine.getCredit());
+// console.log(sodaMachine.getCoinStock());
+
+sodaMachine.selectProduct(products[1].id);
+// console.log(sodaMachine.getCredit());
+
+console.log(sodaMachine.getPurchases());
+console.log(sodaMachine.getCashBack());
+
+// console.log(sodaMachine.getCredit());
 // console.log(sodaMachine.creditSum());
 // console.log(sodaMachine.getSelection());
+
+// for (let i = 0; i < 20; i++) {
+//   sodaMachine.insertCoin(Coin.C10);
+// }
+
+// sodaMachine.selectProduct(products[2].id);
+// console.log(sodaMachine.getPurchases());
+// console.log(sodaMachine.getCashBack());
+// console.log(sodaMachine.creditSum());
+// console.log(sodaMachine.getSelection());
+// console.log(sodaMachine.insertCoin(Coin.E2));
+// // console.log(sodaMachine.insertCoin(Coin.E1));
+// // console.log(sodaMachine.getCredit());
+
+// console.log(sodaMachine.getPurchases());
+// console.log(sodaMachine.getCashBack());
+
+// console.log(sodaMachine.getCoinStock() );
 
 // expect(sodaMachine.getCashBack()).toStrictEqual([String(Coin.E1), String(Coin.C10)]);
 // expect(sodaMachine.getCredit()).toStrictEqual([]);

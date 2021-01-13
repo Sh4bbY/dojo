@@ -4,10 +4,10 @@ import {SodaMachine} from './SodaMachine.solution';
 describe('SodaMachine', () => {
   const sodaMachine = new SodaMachine({
     products: [
-      {id: 1, name: 'Water', amount: 20, price: 100},
-      {id: 2, name: 'Coke', amount: 10, price: 200},
-      {id: 3, name: 'Sprite', amount: 10, price: 150},
-      {id: 4, name: 'Ginger Ale', amount: 1, price: 250},
+      { id: 1, name: "Water", amount: 20, price: 100 },
+      { id: 2, name: "Coke", amount: 10, price: 200 },
+      { id: 3, name: "Sprite", amount: 10, price: 150 },
+      { id: 4, name: "Ginger Ale", amount: 1, price: 250 },
     ],
     coins: {
       [Coin.C5]: 10,
@@ -16,7 +16,8 @@ describe('SodaMachine', () => {
       [Coin.C50]: 10,
       [Coin.E1]: 10,
       [Coin.E2]: 10,
-    },
+    }
+
   });
 
 

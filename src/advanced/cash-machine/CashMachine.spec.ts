@@ -14,7 +14,7 @@ describe("CashMachine", () => {
     accounts: [
       { id: 1, pin: 1234, balance: 1000 },
       { id: 2, pin: 4567, balance: 20 },
-      { id: 1, pin: 4321, balance: -20 },
+      { id: 3, pin: 4321, balance: -20 },
     ],
     cashBox: { 5: 0, 10: 0, 20: 0, 50: 0, 100: 0, 200: 0, 500: 0 },
   });
